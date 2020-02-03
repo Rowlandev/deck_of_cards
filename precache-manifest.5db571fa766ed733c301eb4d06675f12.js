@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "925326d479d407f9b7069c3baa6acaff",
+    "revision": "0b4da634e3c138325b3f8355f2275a46",
     "url": "/Rowlandev/deck_of_cards/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Rowlandev/deck_of_cards/static/js/2.1d404eea.chunk.js.LICENSE"
   },
   {
-    "revision": "00a9cd6ea3449f948f2e",
-    "url": "/Rowlandev/deck_of_cards/static/js/main.807f6ae1.chunk.js"
+    "revision": "6d238fc18bc376f09598",
+    "url": "/Rowlandev/deck_of_cards/static/js/main.505f07e1.chunk.js"
   },
   {
     "revision": "477395fb8695eca5b718",

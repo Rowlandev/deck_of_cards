@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Rowlandev/deck_of_cards/precache-manifest.06012f8a80795874c9d8218a7649c2c9.js"
+  "/Rowlandev/deck_of_cards/precache-manifest.5db571fa766ed733c301eb4d06675f12.js"
 );
 
 self.addEventListener('message', (event) => {
