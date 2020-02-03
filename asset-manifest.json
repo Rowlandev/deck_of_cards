@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/Rowlandev/deck_of_cards/static/js/main.807f6ae1.chunk.js",
+    "main.js.map": "/Rowlandev/deck_of_cards/static/js/main.807f6ae1.chunk.js.map",
+    "runtime-main.js": "/Rowlandev/deck_of_cards/static/js/runtime-main.efd11cbc.js",
+    "runtime-main.js.map": "/Rowlandev/deck_of_cards/static/js/runtime-main.efd11cbc.js.map",
+    "static/js/2.1d404eea.chunk.js": "/Rowlandev/deck_of_cards/static/js/2.1d404eea.chunk.js",
+    "static/js/2.1d404eea.chunk.js.map": "/Rowlandev/deck_of_cards/static/js/2.1d404eea.chunk.js.map",
+    "index.html": "/Rowlandev/deck_of_cards/index.html",
+    "precache-manifest.06012f8a80795874c9d8218a7649c2c9.js": "/Rowlandev/deck_of_cards/precache-manifest.06012f8a80795874c9d8218a7649c2c9.js",
+    "service-worker.js": "/Rowlandev/deck_of_cards/service-worker.js",
+    "static/js/2.1d404eea.chunk.js.LICENSE": "/Rowlandev/deck_of_cards/static/js/2.1d404eea.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.efd11cbc.js",
+    "static/js/2.1d404eea.chunk.js",
+    "static/js/main.807f6ae1.chunk.js"
+  ]
+}
