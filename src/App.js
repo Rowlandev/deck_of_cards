@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div className="App">
-      Hello Worlddd
+      Hello World - We are deployed.
     </div>
   );
 }
