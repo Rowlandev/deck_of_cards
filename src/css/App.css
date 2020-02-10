@@ -10,3 +10,28 @@ html, body, #root {
   background: linear-gradient(to right, #76b852, #8dc26f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100%;
 }
+
+#top-left-suite {
+  margin: 0px;
+  pading: 0px;
+  background: red;
+  width: auto;
+}
+
+#top-left-value {
+  margin: 0px;
+  pading: 0px;
+  background: blue;
+}
+
+#bottom-right-suite {
+  margin: 0px;
+  pading: 0px;
+  background: yellow;
+}
+
+#bottom-right-value {
+  margin: 0px;
+  pading: 0px;
+  background: purple;
+}
