@@ -3,4 +3,51 @@
   width: 143px;
   height: 200px;
   border-radius: 7%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative; /* prevents child elements from going outside of itself */
+  font-family: 'Oswald', sans-serif;
+  top: 100px;
+}
+
+#top-left-suite {
+  position: absolute;
+	top: 5%;
+	left: 5%;
+}
+
+#top-left-value {
+  position: absolute;
+  top: 7%;
+  left: 11.5%;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#bottom-right-suite {
+  position: absolute;
+	bottom: 5%;
+	right: 5%;
+}
+
+#bottom-right-value {
+  position: absolute;
+  bottom: 7%;
+  right: 11.5%;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#large-suite {
+  position: absolute;
+  top: 31%;
+  left: 23%;
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
 }
