@@ -12,30 +12,32 @@
 
 #top-left-suite {
   position: absolute;
-	top: 5%;
-	left: 5%;
+	top: 14%;
+	left: 4%;
 }
 
 #top-left-value {
   position: absolute;
-  top: 7%;
-  left: 11.5%;
+  top: -11%;
+  left: 9%;
   font-weight: bold;
   font-size: 1.3em;
 }
 
 #bottom-right-suite {
   position: absolute;
-	bottom: 5%;
-	right: 5%;
+	bottom: 14%;
+	right: 4%;
+  transform: rotate(180deg);
 }
 
 #bottom-right-value {
   position: absolute;
-  bottom: 7%;
-  right: 11.5%;
+  bottom: -11%;
+  right: 10%;
   font-weight: bold;
   font-size: 1.3em;
+  transform: rotate(180deg);
 }
 
 #large-suite {

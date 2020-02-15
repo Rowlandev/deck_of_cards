@@ -5,7 +5,7 @@ class Tabletop extends React.Component {
   render() {
     return (
       <div>
-        <PlayingCard suite="diamond" value="5" color="red"/>
+        <PlayingCard suite="heart" value="5" color="red"/>
       </div>
     );
   }
