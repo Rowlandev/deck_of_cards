@@ -152,7 +152,7 @@ class PlayingCard extends React.Component {
     }
 
     return (
-      <div id="playing-card">
+      <div id="playing-card" data-testid="card">
         {topLeftSuite}
         {bottomRightSuite}
         {topLeftValue}
