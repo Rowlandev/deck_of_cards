@@ -1,0 +1,18 @@
+.help-icon {
+  text-align: center;
+}
+
+#help-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 1%;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+}
+
+#help-icon:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+  transition: 0.3s;
+}
