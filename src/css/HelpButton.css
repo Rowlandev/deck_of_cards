@@ -16,3 +16,21 @@
   filter: brightness(90%);
   transition: 0.3s;
 }
+
+#help-message {
+  font-family: 'Oswald', sans-serif;
+  background: white;
+  color: #76b852; /* fallback for old browsers */
+  color: -webkit-linear-gradient(to right, #76b852, #8dc26f); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to right, #76b852, #8dc26f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 50%;
+  height: 300px;
+  top: 15%;
+  margin-left: 25%;
+  position: absolute;
+  padding-top: 150px;
+  font-size: 2em;
+  z-index: 1;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10%;
+}
