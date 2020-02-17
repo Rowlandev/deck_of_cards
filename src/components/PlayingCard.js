@@ -25,7 +25,8 @@ import BlackDiamondLarge from "../images/black-large/diamond.png";
 import BlackHeartLarge from "../images/black-large/heart.png";
 import BlackSpadeLarge from "../images/black-large/spade.png";
 
-import GuyFiere from "../images/guy-fieri.jpg"
+import GuyFiere from "../images/backs/guy-fieri.jpg"
+import Prof from "../images/backs/prof.jpeg"
 
 class PlayingCard extends React.Component {
 
@@ -175,10 +176,10 @@ class PlayingCard extends React.Component {
 
     return (
 
-      <div>
+      <div id="back-of-card">
       { this.state.side === "back" &&
         <div id="playing-card" data-testid="card" onClick={this.toggleCardSide}>
-          <img src={GuyFiere} alt="guy fieri" id="back-image"/>
+          <img src={Prof} alt="guy fieri" id="back-image"/>
         </div>
       }
 
