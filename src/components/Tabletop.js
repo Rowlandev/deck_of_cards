@@ -15,7 +15,7 @@ class Tabletop extends React.Component {
     return (
       <div>
         <HelpButton showing={this.state.showingHelpMessage}/>
-        <PlayingCard suite="heart" value="5" color="red"/>
+        <PlayingCard suite="heart" value="5" color="red" side="back"/>
       </div>
     );
   }

@@ -46,6 +46,12 @@
   left: 23%;
 }
 
+#back-image {
+  position: absolute;
+  top: 31%;
+  left: 23%;
+}
+
 .red {
   color: red;
 }
