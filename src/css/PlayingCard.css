@@ -10,6 +10,10 @@
   top: 100px;
 }
 
+#playing-card:hover {
+  cursor: pointer;
+}
+
 #top-left-suite {
   position: absolute;
 	top: 14%;
