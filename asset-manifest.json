@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/deck_of_cards/static/css/main.c13d7b6d.chunk.css",
+    "main.css": "/deck_of_cards/static/css/main.6bf6676d.chunk.css",
     "main.js": "/deck_of_cards/static/js/main.f0eadf0e.chunk.js",
     "main.js.map": "/deck_of_cards/static/js/main.f0eadf0e.chunk.js.map",
     "runtime-main.js": "/deck_of_cards/static/js/runtime-main.fa3a3fb6.js",
@@ -8,15 +8,15 @@
     "static/js/2.0c768e46.chunk.js": "/deck_of_cards/static/js/2.0c768e46.chunk.js",
     "static/js/2.0c768e46.chunk.js.map": "/deck_of_cards/static/js/2.0c768e46.chunk.js.map",
     "index.html": "/deck_of_cards/index.html",
-    "precache-manifest.66459ede9db7e2bd1ee51ff16619c85c.js": "/deck_of_cards/precache-manifest.66459ede9db7e2bd1ee51ff16619c85c.js",
+    "precache-manifest.fc7ced599bbb7f0dd1b76ca4fa0d63ea.js": "/deck_of_cards/precache-manifest.fc7ced599bbb7f0dd1b76ca4fa0d63ea.js",
     "service-worker.js": "/deck_of_cards/service-worker.js",
-    "static/css/main.c13d7b6d.chunk.css.map": "/deck_of_cards/static/css/main.c13d7b6d.chunk.css.map",
+    "static/css/main.6bf6676d.chunk.css.map": "/deck_of_cards/static/css/main.6bf6676d.chunk.css.map",
     "static/js/2.0c768e46.chunk.js.LICENSE": "/deck_of_cards/static/js/2.0c768e46.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.fa3a3fb6.js",
     "static/js/2.0c768e46.chunk.js",
-    "static/css/main.c13d7b6d.chunk.css",
+    "static/css/main.6bf6676d.chunk.css",
     "static/js/main.f0eadf0e.chunk.js"
   ]
 }
