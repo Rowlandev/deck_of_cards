@@ -35,8 +35,26 @@ class PlayingCard extends React.Component {
       suite: this.props.suite,
       value: this.props.value,
       color: this.props.color,
-      side: this.props.side
+      side: "back"
     };
+  }
+
+  toggleCardSide = () => {
+
+    var newSide;
+
+    if (this.state.side === "back") {
+      newSide = "front";
+    } else {
+      newSide = "back";
+    }
+
+    this.setState({
+      suite: this.props.suite,
+      value: this.props.value,
+      color: this.props.color,
+      side: newSide
+    });
   }
 
   render() {
@@ -155,22 +173,25 @@ class PlayingCard extends React.Component {
         break;
     }
 
-    if (this.state.side === "back") {
-      side = <img src={GuyFiere} alt="guy fieri" id="back-image"/>
-      topLeftSuite = <p></p>
-      bottomRightSuite = <p></p>
-      topLeftValue = <p></p>
-      bottomRightValue = <p></p>
-      largeSuite = <p></p>
-    }
-
     return (
-      <div id="playing-card" data-testid="card">
-        {topLeftSuite}
-        {bottomRightSuite}
-        {topLeftValue}
-        {bottomRightValue}
-        {largeSuite}
+
+      <div>
+      { this.state.side === "back" &&
+        <div id="playing-card" data-testid="card" onClick={this.toggleCardSide}>
+          <img src={GuyFiere} alt="guy fieri" id="back-image"/>
+        </div>
+      }
+
+      {
+        this.state.side === "front" &&
+        <div id="playing-card" data-testid="card" onClick={this.toggleCardSide}>
+          {topLeftSuite}
+          {bottomRightSuite}
+          {topLeftValue}
+          {bottomRightValue}
+          {largeSuite}
+        </div>
+      }
       </div>
     );
   }
