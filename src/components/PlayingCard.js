@@ -25,8 +25,8 @@ import BlackDiamondLarge from "../images/black-large/diamond.png";
 import BlackHeartLarge from "../images/black-large/heart.png";
 import BlackSpadeLarge from "../images/black-large/spade.png";
 
-import GuyFiere from "../images/backs/guy-fieri.jpg"
-import Prof from "../images/backs/prof.jpeg"
+// import GuyFiere from "../images/backs/guy-fieri.jpg"
+import Prof from "../images/backs/prof.jpg"
 
 class PlayingCard extends React.Component {
 
@@ -66,7 +66,6 @@ class PlayingCard extends React.Component {
     var bottomRightSuite;
     var bottomRightValue;
     var largeSuite;
-    var side;
 
     // assign card red suite
     if (this.state.color === "red") {
@@ -176,9 +175,9 @@ class PlayingCard extends React.Component {
 
     return (
 
-      <div id="back-of-card">
+      <div>
       { this.state.side === "back" &&
-        <div id="playing-card" data-testid="card" onClick={this.toggleCardSide}>
+        <div id="back-of-card" data-testid="card" onClick={this.toggleCardSide}>
           <img src={Prof} alt="guy fieri" id="back-image"/>
         </div>
       }

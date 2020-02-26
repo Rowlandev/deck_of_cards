@@ -2,16 +2,13 @@
   background: white;
   width: 143px;
   height: 200px;
+  padding: 0;
   border-radius: 7%;
   margin: 0 auto;
   overflow: hidden;
   position: relative; /* prevents child elements from going outside of itself */
   font-family: 'Oswald', sans-serif;
   top: 100px;
-}
-
-#playing-card:hover {
-  cursor: pointer;
 }
 
 #top-left-suite {
@@ -52,11 +49,11 @@
 
 #back-image {
   position: absolute;
-  top: 6%;
-  left: 6.5%;
-  width: 125px;
-  height: 175px;
-  border: 1px solid black;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 7%;
 }
 
 .red {
@@ -68,5 +65,11 @@
 }
 
 #back-of-card {
-
+  width: 143px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative; /* prevents child elements from going outside of itself */
+  font-family: 'Oswald', sans-serif;
+  top: 100px;
 }
