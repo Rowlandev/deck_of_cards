@@ -3,7 +3,7 @@ import PlayingCard from "./PlayingCard.js";
 import HelpButton from "./HelpButton.js";
 
 var deck = {
-  card1Suit: "spade",
+  card1Suit: "club",
   card1Val: "A",
   card2Suit: "club",
   card2Val: "2",

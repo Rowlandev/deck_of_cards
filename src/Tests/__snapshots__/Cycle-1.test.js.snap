@@ -15,17 +15,679 @@ exports[`CYCLE 1 TESTS COMPONENTS RENDER CORRECTLY 1`] = `
           src="passive-help.png"
         />
       </div>
-      <div
-        id="back-of-card"
-      >
+      <div>
         <div
           data-testid="card"
-          id="playing-card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
         >
           <img
             alt="guy fieri"
             id="back-image"
-            src="prof.jpeg"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          data-testid="card"
+          id="back-of-card"
+          style="top: 50px; left: 50px;"
+        >
+          <img
+            alt="guy fieri"
+            id="back-image"
+            src="prof.jpg"
           />
         </div>
       </div>
