@@ -36,6 +36,19 @@ class PlayingCard extends React.Component{
     };
   }
 
+  flipCard = () => {
+    var newSide = null;
+    if (this.state.side === "back"){
+      newSide = "front"
+    } else {
+      newSide = "back"
+    }
+
+    this.setState({
+      side: newSide
+    })
+  }
+
   cardClicked = (e) => {
     this.setState({
       clicked: true,
@@ -176,13 +189,13 @@ class PlayingCard extends React.Component{
     return (
       <div>
       {this.state.side === "back" &&
-        <div id="back-of-card" style={offset} data-testid="card" onMouseDown={(e) => this.cardClicked(e)} onMouseUp={(e) => this.cardReleased(e)}>
+        <div id="back-of-card" style={offset} data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.cardClicked(e)} onDragEnd={(e) => this.cardReleased(e)}>
           <img src={Prof} alt="guy fieri" id="back-image"/>
         </div>
       }
 
       {this.state.side === "front" &&
-        <div id="playing-card" style={offset} data-testid="card" onMouseDown={(e) => this.cardClicked(e)} onMouseUp={(e) => this.cardReleased(e)}>
+        <div id="playing-card" style={offset} data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.cardClicked(e)} onDragEnd={(e) => this.cardReleased(e)}>
           {topLeftSuit}
           {bottomRightSuit}
           {topLeftValue}
