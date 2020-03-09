@@ -9,7 +9,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from "@testing-library/react";
 
 // COMPONENTS TO BE TESTED
-import App from "../App.jsu";
+import App from "../App.js";
 import HelpButton from "../components/HelpButton.js";
 import PlayingCard from "../components/PlayingCard.js";
 import Tabletop from "../components/Tabletop.js";
