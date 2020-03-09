@@ -37,10 +37,10 @@ class PlayingCard extends React.Component{
   }
 
   cardClicked = (e) => {
-    this.mouseDownX = e.clientX;
-    this.mouseDownY = e.clientY;
     this.setState({
-      clicked: true
+      clicked: true,
+      mouseDownX: e.clientX,
+      mouseDownY: e.clientY
     })
   }
 
@@ -53,15 +53,15 @@ class PlayingCard extends React.Component{
 
 
     if (this.state.clicked === true){
-      if (x === this.mouseDownX && y === this.mouseDownY) {
+      if (x === this.state.mouseDownX && y === this.state.mouseDownY) {
         if (this.state.side === "back") {
           newSide = "front";
         } else {
           newSide = "back";
         }
       } else {
-        newTop = this.state.top + (y - this.mouseDownY);
-        newLeft = this.state.left + (x - this.mouseDownX);
+        newTop = this.state.top + (y - this.state.mouseDownY);
+        newLeft = this.state.left + (x - this.state.mouseDownX);
       }
     }
 
