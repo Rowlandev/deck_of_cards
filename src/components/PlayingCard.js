@@ -187,7 +187,7 @@ class PlayingCard extends React.Component{
 
 
     return (
-      <div>
+      <div id="card">
       {this.state.side === "back" &&
         <div id="back-of-card" style={offset} data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.cardClicked(e)} onDragEnd={(e) => this.cardReleased(e)}>
           <img src={Prof} alt="guy fieri" id="back-image"/>
