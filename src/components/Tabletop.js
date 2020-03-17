@@ -1,4 +1,7 @@
+// SYSTEM IMPORTS
 import React from "react";
+
+// CUSTOM IMPORTS
 import PlayingCard from "./PlayingCard.js";
 import HelpButton from "./HelpButton.js";
 
@@ -114,15 +117,20 @@ class Tabletop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showingHelpMessage: false
+      showingHelpMessage: false,
+      dark: false
     };
   }
 
+  // darken Tabletop to create modal effect
+  darkenTabletop() {
+    console.log("darken");
+  }
 
   render() {
     return (
-      <div>
-        <HelpButton showing={this.state.showingHelpMessage}/>
+      <div id='tabletop'>
+        <HelpButton showing={this.state.showingHelpMessage} darkenTabletop={this.darkenTabletop}/>
         <PlayingCard suit={deck.card1Suit} value={deck.card1Val}/>
         <PlayingCard suit={deck.card2Suit} value={deck.card2Val}/>
         <PlayingCard suit={deck.card3Suit} value={deck.card3Val}/>
