@@ -15,9 +15,28 @@ class Deck extends React.Component {
   }
 
   shuffle = () => {
-    // TODO
-    // I think it will be easiest if we change how the card values/suits are stored to an array
-    // so we can loop through all of them easier
+    var tempSuitArray = this.state.suit;
+    for (var i1=0; i1<this.state.suit.length; i1++){
+      var rand1 = Math.floor(Math.random() * 52);
+      var temp1 = tempSuitArray[rand1];
+      tempSuitArray[rand1] = tempSuitArray[i1];
+      tempSuitArray[i1] = temp1;
+    }
+
+    var tempValArray = this.state.value
+    for (var i2=0; i2<this.state.value.length; i2++){
+      var rand2 = Math.floor(Math.random() * 52);
+      var temp2 = tempValArray[rand2];
+      tempValArray[rand2] = tempValArray[i2];
+      tempValArray[i2] = temp2;
+    }
+
+    this.setState({
+      value: tempValArray,
+      suit: tempSuitArray
+    });
+
+    this.render(); //this doesn't work, we need to figure out how to make it rerender when it is shuffled
   }
 
   render() {
@@ -75,6 +94,7 @@ class Deck extends React.Component {
         <PlayingCard suit={this.state.suit[49]} value={this.state.value[49]}/>
         <PlayingCard suit={this.state.suit[50]} value={this.state.value[50]}/>
         <PlayingCard suit={this.state.suit[51]} value={this.state.value[51]}/>
+        <span><button onClick={this.shuffle}>Shuffle</button></span>
       </div>
     );
   }
