@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+#main-menu {
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 75px;
+  color: white;
+  padding-top: 40px;
+}
+
+#creators {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 20px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+
+.button {
+  background-color: white;
+  width: 250px;
+  border: solid black 1px;
+  color: black;
+  padding: 20px;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: LightGray;
+}
