@@ -1,18 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
 #main-menu {
   text-align: center;
+  margin: 0;
 }
 
 #title {
+  margin: 0;
   text-align: center;
   font-family: "Andale Mono", AndaleMono, monospace;
   font-size: 75px;
@@ -24,8 +16,7 @@
   font-family: "Andale Mono", AndaleMono, monospace;
   font-size: 20px;
   color: white;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 
@@ -40,7 +31,7 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 7px;
-  margin-top: 20px;
+  margin-top: 7px;
 }
 
 .button:hover {
