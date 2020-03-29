@@ -32,7 +32,6 @@ class PlayingCard extends React.Component{
       mouseDownX:0,
       mouseDownY:0,
       side: "back",
-      clicked: false
     };
   }
 
@@ -49,42 +48,27 @@ class PlayingCard extends React.Component{
     })
   }
 
-  cardClicked = (e) => {
+  dragStart = (e) => {
     this.setState({
-      clicked: true,
       mouseDownX: e.clientX,
       mouseDownY: e.clientY
     })
   }
 
-  cardReleased = (e) => {
-    var newSide = this.state.side;  //in case it is not changed
+  drop = (e) => {
     var newTop = this.state.top;
     var newLeft = this.state.left;
     var x = e.clientX;
     var y = e.clientY;
 
-
-    if (this.state.clicked === true){
-      if (x === this.state.mouseDownX && y === this.state.mouseDownY) {
-        if (this.state.side === "back") {
-          newSide = "front";
-        } else {
-          newSide = "back";
-        }
-      } else {
-        newTop = this.state.top + (y - this.state.mouseDownY);
-        newLeft = this.state.left + (x - this.state.mouseDownX);
-      }
-    }
+    newTop = this.state.top + (y - this.state.mouseDownY);
+    newLeft = this.state.left + (x - this.state.mouseDownX);
 
     this.setState({
       suit: this.props.suit,
       value: this.props.value,
       top: newTop,
       left: newLeft,
-      side: newSide,
-      clicked: false
     });
   }
 
@@ -103,21 +87,21 @@ class PlayingCard extends React.Component{
     // assign card red suit
 
     if (this.state.suit === "heart") {
-      topLeftSuit = <img src={RedHeartCorner} alt="suit of hearts" id="top-left-suit"/>;
-      bottomRightSuit = <img src={RedHeartCorner} alt="suit of hearts" id="bottom-right-suit"/>;
-      largeSuit = <img src={RedHeartLarge} alt="large heart" id="large-suit"/>
+      topLeftSuit = <img src={RedHeartCorner} alt="suit of hearts" id="top-left-suit" draggable={false}/>;
+      bottomRightSuit = <img src={RedHeartCorner} alt="suit of hearts" id="bottom-right-suit" draggable={false}/>;
+      largeSuit = <img src={RedHeartLarge} alt="large heart" id="large-suit" draggable={false}/>
     } else if (this.state.suit === "diamond") {
-      topLeftSuit = <img src={RedDiamondCorner} alt="suit of diamonds" id="top-left-suit"/>;
-      bottomRightSuit = <img src={RedDiamondCorner} alt="suit of diamonds" id="bottom-right-suit"/>;
-      largeSuit = <img src={RedDiamondLarge} alt="large heart" id="large-suit"/>
+      topLeftSuit = <img src={RedDiamondCorner} alt="suit of diamonds" id="top-left-suit" draggable={false}/>;
+      bottomRightSuit = <img src={RedDiamondCorner} alt="suit of diamonds" id="bottom-right-suit" draggable={false}/>;
+      largeSuit = <img src={RedDiamondLarge} alt="large heart" id="large-suit" draggable={false}/>
     } else if (this.state.suit === "spade") {
-        topLeftSuit = <img src={BlackSpadeCorner} alt="suit of spades" id="top-left-suit"/>;
-        bottomRightSuit = <img src={BlackSpadeCorner} alt="suit of spades" id="bottom-right-suit"/>;
-        largeSuit = <img src={BlackSpadeLarge} alt="large heart" id="large-suit"/>
+        topLeftSuit = <img src={BlackSpadeCorner} alt="suit of spades" id="top-left-suit" draggable={false}/>;
+        bottomRightSuit = <img src={BlackSpadeCorner} alt="suit of spades" id="bottom-right-suit" draggable={false}/>;
+        largeSuit = <img src={BlackSpadeLarge} alt="large heart" id="large-suit" draggable={false}/>
     } else if (this.state.suit === "club") {
-      topLeftSuit = <img src={BlackClubCorner} alt="suit of clubs" id="top-left-suit"/>;
-      bottomRightSuit = <img src={BlackClubCorner} alt="suit of clubs" id="bottom-right-suit"/>;
-      largeSuit = <img src={BlackClubLarge} alt="large heart" id="large-suit"/>
+      topLeftSuit = <img src={BlackClubCorner} alt="suit of clubs" id="top-left-suit" draggable={false}/>;
+      bottomRightSuit = <img src={BlackClubCorner} alt="suit of clubs" id="bottom-right-suit" draggable={false}/>;
+      largeSuit = <img src={BlackClubLarge} alt="large heart" id="large-suit" draggable={false}/>
     }
 
     // assign card value based on props
@@ -187,15 +171,15 @@ class PlayingCard extends React.Component{
 
 
     return (
-      <div id="card">
+      <div id="card" draggable data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.dragStart(e)} onDragEnd={(e) => this.drop(e)}>
       {this.state.side === "back" &&
-        <div id="back-of-card" style={offset} data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.cardClicked(e)} onDragEnd={(e) => this.cardReleased(e)}>
-          <img src={Prof} alt="guy fieri" id="back-image"/>
+        <div id="back-of-card" style={offset}>
+          <img src={Prof} alt="guy fieri" id="back-image" draggable={false}/>
         </div>
       }
 
       {this.state.side === "front" &&
-        <div id="playing-card" style={offset} data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.cardClicked(e)} onDragEnd={(e) => this.cardReleased(e)}>
+        <div id="playing-card" style={offset}>
           {topLeftSuit}
           {bottomRightSuit}
           {topLeftValue}
