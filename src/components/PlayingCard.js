@@ -33,7 +33,6 @@ class PlayingCard extends React.Component{
       mouseDownY:0,
       side: "back",
     };
-
   }
 
   flipCard = () => {
@@ -86,7 +85,6 @@ class PlayingCard extends React.Component{
                 }
 
     // assign card red suit
-
     if (this.state.suit === "heart") {
       topLeftSuit = <img src={RedHeartCorner} alt="suit of hearts" id="top-left-suit" draggable={false}/>;
       bottomRightSuit = <img src={RedHeartCorner} alt="suit of hearts" id="bottom-right-suit" draggable={false}/>;
@@ -166,10 +164,6 @@ class PlayingCard extends React.Component{
       default:
         break;
     }
-
-
-
-
 
     return (
       <div id="card" draggable data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.dragStart(e)} onDragEnd={(e) => this.drop(e)}>

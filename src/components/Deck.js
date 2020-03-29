@@ -18,7 +18,6 @@ class Deck extends React.Component {
     };
   }
 
-
   shuffle = () => {
     var currentSuitVals = [...this.state.suitVals];
     var newOrder = [];
