@@ -1,0 +1,90 @@
+#playing-card {
+  background: white;
+  width: 143px;
+  height: 200px;
+  padding: 0;
+  border-radius: 7%;
+  border: solid gray 1px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute; /* prevents child elements from going outside of itself */
+  font-family: 'Oswald', sans-serif;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+#top-left-suit {
+  position: absolute;
+	top: 14%;
+	left: 4%;
+}
+
+#top-left-value {
+  position: absolute;
+  top: -11%;
+  left: 9%;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#bottom-right-suit {
+  position: absolute;
+	bottom: 14%;
+	right: 4%;
+  transform: rotate(180deg);
+}
+
+#bottom-right-value {
+  position: absolute;
+  bottom: -11%;
+  right: 10%;
+  font-weight: bold;
+  font-size: 1.3em;
+  transform: rotate(180deg);
+}
+
+#large-suit {
+  position: absolute;
+  top: 31%;
+  left: 23%;
+}
+
+#back-image {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 7%;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+.diamond {
+  color: red;
+}
+
+.heart {
+  color: red;
+}
+
+.spade {
+  color: black;
+}
+
+.club {
+  color: black;
+}
+
+#back-of-card {
+  width: 143px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute; /* prevents child elements from going outside of itself */
+  font-family: 'Oswald', sans-serif;
+}

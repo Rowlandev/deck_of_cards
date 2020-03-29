@@ -1,16 +1,25 @@
 {
+  "homepage": "https://rowlandev.github.io/deck_of_cards",
   "name": "deck_of_cards",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@testing-library/user-event": "^7.2.1",
+    "material-kit-react": "^1.8.0",
     "react": "^16.12.0",
+    "react-confirm-alert": "^2.4.1",
     "react-dom": "^16.12.0",
+    "react-draggable": "^4.2.0",
+    "react-icons": "^3.9.0",
+    "react-playing-card": "^0.2.5",
     "react-scripts": "3.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -30,5 +39,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.4.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "gh-pages": "^2.2.0",
+    "react-test-renderer": "^16.12.0"
   }
 }
