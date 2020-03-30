@@ -48,6 +48,16 @@ class PlayingCard extends React.Component{
     })
   }
 
+  handleShuffle() {
+    this.setState({
+      suit: this.props.suit,
+      value: this.props.value,
+      top: 50,
+      left: 50,
+      side: "back",
+    })
+  }
+
   dragStart = (e) => {
     this.setState({
       mouseDownX: e.clientX,
@@ -68,7 +78,7 @@ class PlayingCard extends React.Component{
       suit: this.props.suit,
       value: this.props.value,
       top: newTop,
-      left: newLeft,
+      left: newLeft
     });
   }
 
@@ -97,7 +107,7 @@ class PlayingCard extends React.Component{
         topLeftSuit = <img src={BlackSpadeCorner} alt="suit of spades" id="top-left-suit" draggable={false}/>;
         bottomRightSuit = <img src={BlackSpadeCorner} alt="suit of spades" id="bottom-right-suit" draggable={false}/>;
         largeSuit = <img src={BlackSpadeLarge} alt="large heart" id="large-suit" draggable={false}/>
-    } else if (this.state.suit === "club") {
+    } else {
       topLeftSuit = <img src={BlackClubCorner} alt="suit of clubs" id="top-left-suit" draggable={false}/>;
       bottomRightSuit = <img src={BlackClubCorner} alt="suit of clubs" id="bottom-right-suit" draggable={false}/>;
       largeSuit = <img src={BlackClubLarge} alt="large heart" id="large-suit" draggable={false}/>
@@ -169,7 +179,7 @@ class PlayingCard extends React.Component{
       <div id="card" draggable data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.dragStart(e)} onDragEnd={(e) => this.drop(e)}>
       {this.state.side === "back" &&
         <div id="back-of-card" style={offset}>
-          <img src={Prof} alt="guy fieri" id="back-image" draggable={false}/>
+          <img src={Prof} alt="prof cardback" id="back-image" draggable={false}/>
         </div>
       }
 
