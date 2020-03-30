@@ -37,3 +37,38 @@
 .button:hover {
   background-color: LightGray;
 }
+
+#settings-menu {
+  text-align: center;
+  margin: 0;
+}
+
+#settings-title {
+  margin: 0;
+  text-align: center;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 50px;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#card-choices {
+  border: solid white 1px;
+  border-radius: 7px;
+  background: black;
+  margin: auto;
+  width: 650px;
+}
+
+.card-backs {
+  width: 143px;
+  height: 200px;
+  padding: 0;
+  border-radius: 7%;
+  border: solid gray 1px;
+  margin: 0 auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  overflow: hidden;
+}

@@ -17,8 +17,16 @@ import RedHeartLarge from "../images/red-large/heart.png";
 import BlackClubLarge from "../images/black-large/club.png";
 import BlackSpadeLarge from "../images/black-large/spade.png";
 
-// import GuyFiere from "../images/backs/guy-fieri.jpg"
-import Prof from "../images/backs/prof.jpg"
+//import card back images
+import Prof1 from "../images/backs/prof1.JPG"
+import Prof2 from "../images/backs/prof2.PNG"
+import Prof3 from "../images/backs/prof3.JPG"
+import Tim from "../images/backs/tim.PNG"
+import Flavortown from "../images/backs/flavortown.PNG"
+import NickCage from "../images/backs/nick_cage.PNG"
+import TheGuy from "../images/backs/the_guy.PNG"
+import Squid from "../images/backs/squid.PNG"
+
 
 class PlayingCard extends React.Component{
 
@@ -27,6 +35,7 @@ class PlayingCard extends React.Component{
     this.state = {
       suit: this.props.suit,
       value: this.props.value,
+      img: this.props.img,
       top: 50,
       left: 50,
       mouseDownX:0,
@@ -179,7 +188,7 @@ class PlayingCard extends React.Component{
       <div id="card" draggable data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.dragStart(e)} onDragEnd={(e) => this.drop(e)}>
       {this.state.side === "back" &&
         <div id="back-of-card" style={offset}>
-          <img src={Prof} alt="prof cardback" id="back-image" draggable={false}/>
+          <img src={this.props.img} alt="prof cardback" id="back-image" draggable={false}/>
         </div>
       }
 

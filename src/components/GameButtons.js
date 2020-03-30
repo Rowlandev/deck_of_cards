@@ -1,8 +1,10 @@
 import React from "react";
-import HelpIcon from "../images/icons/passive-help.png";
-import "../css/HelpButton.css";
+import ShuffleIcon from "../images/icons/shuffle.png";
+import HelpIcon from "../images/icons/help.png";
+import ExitIcon from "../images/icons/exit.png";
+import "../css/GameButtons.css";
 
-class HelpButton extends React.Component {
+class GameButtons extends React.Component {
 
   constructor(props) {
     super(props);
@@ -13,7 +15,6 @@ class HelpButton extends React.Component {
   }
 
   toggleHelp = () => {
-
     var classNameToBe;
 
     if (this.state.modalClassName === "modal-hidden") {
@@ -28,15 +29,24 @@ class HelpButton extends React.Component {
     });
   }
 
+  handleExit = () => {
+    this.props.goToMainMenu()
+  }
+
+  handleShuffle = () => {
+    this.props.shuffle()
+  }
+
   render() {
     return (
-      <div className="help-modal-container">
+      <div className="button-modal-container">
 
         {/* Darkened Background*/}
         <div className={this.state.modalClassName}></div>
 
-        {/* Help Icon */}
-        <img src={HelpIcon} alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+        <img src={ShuffleIcon} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
+        <img src={HelpIcon} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+        <img src={ExitIcon} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
 
         {/* Header & Body*/}
         {this.state.showing &&
@@ -69,4 +79,4 @@ class HelpButton extends React.Component {
   }
 }
 
-export default HelpButton;
+export default GameButtons;
