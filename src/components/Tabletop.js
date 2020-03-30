@@ -36,7 +36,6 @@ class Tabletop extends React.Component {
             <p id="title">deck_of_cards</p>
             <p id="creators">By: Braden Batman, Chase Grainger, and Matthew Heck</p>
             <p><button class="button" onClick={this.enterSandboxMode}>Sandbox Mode</button></p>
-            <p><button class="button" >Games (Coming Soon!)</button></p>
             <p><button class="button" >Settings</button></p>
             <p><button class="button" >Help</button></p>
           </div>
