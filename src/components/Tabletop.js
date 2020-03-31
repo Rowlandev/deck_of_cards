@@ -128,15 +128,15 @@ class Tabletop extends React.Component {
           <div id="settings-menu">
             <p id="settings-title">Choose your fighter...</p>
             <div id="card-choices">
-              <p><img className="card-backs" src={Prof1} onClick={this.prof1Click}/>
-                 <img className="card-backs" src={Prof2} onClick={this.prof2Click}/>
-                 <img className="card-backs" src={Prof3} onClick={this.prof3Click}/>
-                 <img className="card-backs" src={Tim} onClick={this.timClick}/>
+              <p><img className="card-backs" alt="card back" src={Prof1} onClick={this.prof1Click}/>
+                 <img className="card-backs" alt="card back" src={Prof2} onClick={this.prof2Click}/>
+                 <img className="card-backs" alt="card back" src={Prof3} onClick={this.prof3Click}/>
+                 <img className="card-backs" alt="card back" src={Tim} onClick={this.timClick}/>
               </p>
-              <p><img className="card-backs" src={Flavortown} onClick={this.flavortownClick}/>
-                 <img className="card-backs" src={TheGuy} onClick={this.theGuyClick}/>
-                 <img className="card-backs" src={NickCage} onClick={this.nickCageClick}/>
-                 <img className="card-backs" src={Squid} onClick={this.squidClick}/>
+              <p><img className="card-backs" alt="card back" src={Flavortown} onClick={this.flavortownClick}/>
+                 <img className="card-backs" alt="card back" src={TheGuy} onClick={this.theGuyClick}/>
+                 <img className="card-backs" alt="card back" src={NickCage} onClick={this.nickCageClick}/>
+                 <img className="card-backs" alt="card back" src={Squid} onClick={this.squidClick}/>
               </p>
               </div>
           </div>
