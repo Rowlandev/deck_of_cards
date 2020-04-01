@@ -53,15 +53,11 @@ class GameButtons extends React.Component {
           <div id="header-and-body">
 
             <div id="header">
-              <p id='header-text'>Welcome to our deck of cards simulation!</p>
+              <p id='header-text'>{this.props.helpText.header}</p>
             </div>
 
             <div id="body">
-              <p id='body-text'>
-                Using our deck of cards simulation is very
-                simple - all you have to do is drag and drop cards
-                and pretend as if they were real :)
-              </p>
+              <p id='body-text'>{this.props.helpText.body}</p>
             </div>
 
             <div id="close-button" onClick={this.toggleHelp}>

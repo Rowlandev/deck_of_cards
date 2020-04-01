@@ -16,6 +16,30 @@ import GameButtons from "./GameButtons.js";
 import Deck from "./Deck.js";
 import "../css/Tabletop.css";
 
+/* Help Message Object to pass as props */
+const help = {
+  solitaire: {
+    header: "Solitaire",
+    body: "solitaire"
+  },
+  theIdiot: {
+    header: "The Idiot",
+    body: "the idiot"
+  },
+  accordian: {
+    header: "Accordian",
+    body: "accordian"
+  },
+  pyramid: {
+    header: "Pyramid",
+    body: "pyramid"
+  },
+  freeMode: {
+    header: "Free Mode",
+    body: "Welcome to free mode - feel free to move the cards from the deck however you would like :)"
+  }
+};
+
 class Tabletop extends React.Component {
 
   constructor(props) {
@@ -24,7 +48,8 @@ class Tabletop extends React.Component {
       mode: "mainMenu",
       showingHelpMessage: false,
       dark: false,
-      img: Prof1
+      img: Prof1,
+      helpText: help.freeMode
     };
   }
 
@@ -38,6 +63,12 @@ class Tabletop extends React.Component {
     this.setState({
       mode: "settings"
     })
+  }
+
+  enterChoosingLayout = (e) => {
+    this.setState({
+      mode: "choosingLayout"
+    });
   }
 
   //called from GameButtons to the deck
@@ -109,21 +140,27 @@ class Tabletop extends React.Component {
   render() {
     return (
       <div id='display'>
+
+      {/* Main Menu */}
       {this.state.mode === "mainMenu" &&
-          <div id='main-menu'>
+          <div className='main-menu'>
             <p id="title">deck_of_cards</p>
             <p id="creators">By: Braden Batman, Chase Grainger, and Matthew Heck</p>
-            <p><button className="button" onClick={this.enterSandboxMode}>Sandbox Mode</button></p>
+            <p><button className="button" onClick={this.enterChoosingLayout}>Sandbox Mode</button></p>
             <p><button className="button" onClick={this.enterSettings}>Settings</button></p>
             <p><button className="button" >Help</button></p>
           </div>
       }
+
+      {/* Sandbox Mode */}
       {this.state.mode === "sandbox" &&
           <div id="table">
-            <GameButtons type="help" showing={this.state.showingHelpMessage} darkenTabletop={this.darkenTabletop} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} />
+            <GameButtons type="help" showing={this.state.showingHelpMessage} darkenTabletop={this.darkenTabletop} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
             <Deck ref="deck" img={this.state.img}/>
           </div>
       }
+
+      {/* Choose Your Fighter */}
       {this.state.mode === "settings" &&
           <div id="settings-menu">
             <p id="settings-title">Choose your fighter...</p>
@@ -141,6 +178,21 @@ class Tabletop extends React.Component {
               </div>
           </div>
       }
+
+      {/* Choose Custom Sandbox Layout */}
+      {this.state.mode === "choosingLayout" &&
+      <div className="main-menu">
+        <p id="title">Choose Your Game Mode</p>
+        <div>
+          <p><button className="button" onClick={this.enterSandboxMode} text={help.solitaire}>Solitaire</button></p>
+          <p><button className="button" onClick={this.enterSandboxMode} text={help.theIdiot}>The Idiot</button></p>
+          <p><button className="button" onClick={this.enterSandboxMode} text={help.accordian}>Accordian</button></p>
+          <p><button className="button" onClick={this.enterSandboxMode} text={help.pyramid}>Pyramid</button></p>
+          <p><button className="button" onClick={this.enterSandboxMode} text={help.freeMode}>Free Mode</button></p>
+        </div>
+      </div>
+      }
+
       </div>
     );
   }
