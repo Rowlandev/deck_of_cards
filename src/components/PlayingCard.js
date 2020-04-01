@@ -17,16 +17,6 @@ import RedHeartLarge from "../images/red-large/heart.png";
 import BlackClubLarge from "../images/black-large/club.png";
 import BlackSpadeLarge from "../images/black-large/spade.png";
 
-//import card back images
-import Prof1 from "../images/backs/prof1.JPG"
-import Prof2 from "../images/backs/prof2.PNG"
-import Prof3 from "../images/backs/prof3.JPG"
-import Tim from "../images/backs/tim.PNG"
-import Flavortown from "../images/backs/flavortown.PNG"
-import NickCage from "../images/backs/nick_cage.PNG"
-import TheGuy from "../images/backs/the_guy.PNG"
-import Squid from "../images/backs/squid.PNG"
-
 
 class PlayingCard extends React.Component{
 

@@ -1,16 +1,6 @@
 // SYSTEM IMPORTS
 import React from "react";
 
-// IMAGE IMPORTS
-import Prof1 from "../images/backs/prof1.JPG"
-import Prof2 from "../images/backs/prof2.PNG"
-import Prof3 from "../images/backs/prof3.JPG"
-import Tim from "../images/backs/tim.PNG"
-import Flavortown from "../images/backs/flavortown.PNG"
-import NickCage from "../images/backs/nick_cage.PNG"
-import TheGuy from "../images/backs/the_guy.PNG"
-import Squid from "../images/backs/squid.PNG"
-
 // CUSTOM IMPORTS
 import PlayingCard from "./PlayingCard.js";
 
@@ -32,13 +22,11 @@ class Deck extends React.Component {
   shuffle = () => {
     var currentSuitVals = [...this.state.suitVals];
     var newOrder = [];
-    var i = 0;
 
     while(currentSuitVals.length !== 0){
       var rand = Math.floor(Math.random() * (currentSuitVals.length));
       newOrder.push(currentSuitVals[rand]);
       currentSuitVals.splice(rand, 1);
-      i++;
     }
 
     this.setState({
@@ -60,12 +48,6 @@ class Deck extends React.Component {
       //console.log('Deck recreate trigger');
     }
     return deck;
-  }
-
-  changeDeckImg = () => {
-    this.setState({
-      img: Tim
-    });
   }
 
   render() {
