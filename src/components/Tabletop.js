@@ -177,8 +177,8 @@ class Tabletop extends React.Component {
           <div className='main-menu'>
             <p id="title">deck_of_cards</p>
             <p id="creators">By: Braden Batman, Chase Grainger, and Matthew Heck</p>
-            <p><button className="button" onClick={this.enterChoosingLayout}>Sandbox Mode</button></p>
-            <p><button className="button" onClick={this.enterSettings}>Settings</button></p>
+            <p><button className="button" onClick={this.enterChoosingLayout}>Play</button></p>
+            <p><button className="button" onClick={this.enterSettings}>Choose Cardbacks</button></p>
             <p><button className="button" >Help</button></p>
           </div>
       }
