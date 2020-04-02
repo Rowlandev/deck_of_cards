@@ -60,8 +60,10 @@ class GameButtons extends React.Component {
               <p id='body-text'>{this.props.helpText.body}</p>
             </div>
 
-            <div id="close-button" onClick={this.toggleHelp}>
-              Close
+            <div id="close-button-container">
+              <div id="close-button" onClick={this.toggleHelp}>
+                <p id="close-button-text">Close</p>
+              </div>
             </div>
 
           </div>

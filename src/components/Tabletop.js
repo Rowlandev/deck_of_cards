@@ -20,19 +20,19 @@ import "../css/Tabletop.css";
 const help = {
   solitaire: {
     header: "Solitaire",
-    body: "solitaire"
+    body: "The first objective is to release and play into position certain cards to build up each foundation, in sequence and in suit, from the ace through the king. The ultimate objective is to build the whole pack onto the foundations, and if that can be done, the Solitaire game is won."
   },
   theIdiot: {
     header: "The Idiot",
-    body: "the idiot"
+    body: "In this game, the goal is to be anything but the last person to play out all the cards from their hand. You play cards by either matching the current number in the discard pile or playing a higher-ranking card. The last person to empty their hand is declared the loser!."
   },
   accordian: {
     header: "Accordian",
-    body: "accordian"
+    body: "Accordion is a solitaire game using one deck of playing cards. The object is to compress the entire deck into one pile like an accordion!"
   },
   pyramid: {
     header: "Pyramid",
-    body: "pyramid"
+    body: "The objective of Pyramid is to remove pairs of cards that add up to the total of the highest card in the deck from a pyramid arrangement of 28 cards. All cards (cards from the pyramid and cards from the stock) must be moved to the foundation. The pyramid is demolished by the end, if it stands you lose."
   },
   freeMode: {
     header: "Free Mode",
@@ -49,14 +49,9 @@ class Tabletop extends React.Component {
       showingHelpMessage: false,
       dark: false,
       img: Prof1,
-      helpText: help.freeMode
+      helpText: help.freeMode,
+      layout: 'no layout chosen'
     };
-  }
-
-  enterSandboxMode = (e) => {
-    this.setState({
-      mode: "sandbox"
-    })
   }
 
   enterSettings = (e) => {
@@ -131,6 +126,51 @@ class Tabletop extends React.Component {
     })
   }
 
+  /* Update Card Layouts */
+  loadFreeMode = () => {
+    this.setState({
+      mode: 'sandbox',
+      layout: 'free-mode',
+      helpText: help.freeMode
+    });
+  }
+
+  loadPyramid = () => {
+    this.setState({
+      mode: 'sandbox',
+      layout: 'pyramid',
+      helpText: help.pyramid
+    });
+  }
+
+  loadAccordian = () => {
+    this.setState({
+      mode: 'sandbox',
+      layout: 'accordian',
+      helpText: help.accordian
+    });
+  }
+
+  loadTheIdiot = () => {
+    this.setState({
+      mode: 'sandbox',
+      layout: 'the-idiot',
+      helpText: help.theIdiot
+    });
+  }
+
+  loadSolitaire = () => {
+    this.setState({
+      mode: 'sandbox',
+      layout: 'solitaire',
+      helpText: help.solitaire
+    });
+  }
+
+
+
+
+
 
   // darken Tabletop to create modal effect
   darkenTabletop() {
@@ -138,6 +178,9 @@ class Tabletop extends React.Component {
   }
 
   render() {
+
+    console.log(this.state.layout);
+
     return (
       <div id='display'>
 
@@ -156,7 +199,7 @@ class Tabletop extends React.Component {
       {this.state.mode === "sandbox" &&
           <div id="table">
             <GameButtons type="help" showing={this.state.showingHelpMessage} darkenTabletop={this.darkenTabletop} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
-            <Deck ref="deck" img={this.state.img}/>
+            <Deck ref="deck" img={this.state.img} layout={this.state.layout}/>
           </div>
       }
 
@@ -184,11 +227,11 @@ class Tabletop extends React.Component {
       <div className="main-menu">
         <p id="title">Choose Your Game Mode</p>
         <div>
-          <p><button className="button" onClick={this.enterSandboxMode} text={help.solitaire}>Solitaire</button></p>
-          <p><button className="button" onClick={this.enterSandboxMode} text={help.theIdiot}>The Idiot</button></p>
-          <p><button className="button" onClick={this.enterSandboxMode} text={help.accordian}>Accordian</button></p>
-          <p><button className="button" onClick={this.enterSandboxMode} text={help.pyramid}>Pyramid</button></p>
-          <p><button className="button" onClick={this.enterSandboxMode} text={help.freeMode}>Free Mode</button></p>
+          <p><button className="button" onClick={this.loadSolitaire} text={help.solitaire}>Solitaire</button></p>
+          <p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
+          <p><button className="button" onClick={this.loadAccordian} text={help.accordian}>Accordian</button></p>
+          <p><button className="button" onClick={this.loadPyramid} text={help.pyramid}>Pyramid</button></p>
+          <p><button className="button" onClick={this.loadFreeMode} text={help.freeMode}>Free Mode</button></p>
         </div>
       </div>
       }

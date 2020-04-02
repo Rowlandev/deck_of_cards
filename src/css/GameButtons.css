@@ -1,7 +1,7 @@
 .button-modal-container {
   text-align: center;
   position: relative;
-  height: 350px;
+  height: 500px;
 }
 
 
@@ -25,7 +25,6 @@
 
 #header-and-body {
   background: white;
-  position: relative;
   z-index: 1;
   width: 50%;
   height: 100%;
@@ -42,38 +41,46 @@
   background: #2d3436;
   color: white;
   height: 30%;
+  width: 100%;
+  display: table;
 }
 
 #header-text {
   padding: 0;
   margin: 0;
-  padding-top: 40px;
+  display: table-cell;
+  vertical-align: middle;
   font-size: 1.5em;
 }
 
 #body {
   height: 70%;
   background: #dfe6e9;
+  position: relative;
 }
 
 #body-text {
   padding: 0;
+  margin-top: -50px;
   padding-left: 30px;
   padding-right: 30px;
   line-height: 1.5em;
-  margin: 0;
-  padding-top: 60px;
   font-size: 1em;
+  position: absolute;
+  top: 35%;
 }
 
 #close-button {
   border: 2px solid #2d3436;
   width: 20%;
-  padding: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin: 0 auto;
-  margin-top: -80px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+#close-button-text {
 }
 
 #close-button:hover {

@@ -36,7 +36,6 @@ class Deck extends React.Component {
     setTimeout(() =>{
       for(var i=0;i<this.state.suitVals.length;i++){
         this.refs['card'+i].handleShuffle();
-        //console.log('Shuffle trigger');
       }
     });
   }
@@ -45,7 +44,6 @@ class Deck extends React.Component {
   let deck = []
     for (let i=0; i < this.state.suitVals.length; i++) {
       deck.push(<PlayingCard ref={'card'+i} key={i} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img}/>)
-      //console.log('Deck recreate trigger');
     }
     return deck;
   }
@@ -53,7 +51,6 @@ class Deck extends React.Component {
   render() {
     return (
       <div id='deck'>
-        {console.log(this)}
         {this.createDeck()}
       </div>
     );
