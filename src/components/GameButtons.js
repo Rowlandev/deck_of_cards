@@ -44,9 +44,9 @@ class GameButtons extends React.Component {
         {/* Darkened Background*/}
         <div className={this.state.modalClassName}></div>
 
-        <img src={ShuffleIcon} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
-        <img src={HelpIcon} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
-        <img src={ExitIcon} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+        <img src={ShuffleIcon} style={{zIndex:100}} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
+        <img src={HelpIcon} style={{zIndex:100}} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+        <img src={ExitIcon} style={{zIndex:100}} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
 
         {/* Header & Body*/}
         {this.state.showing &&
