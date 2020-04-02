@@ -4,6 +4,8 @@ import React from "react";
 // CUSTOM IMPORTS
 import PlayingCard from "./PlayingCard.js";
 
+import { solitaireTemplates, freeModeTemplates } from '../Templates.js';
+
 class Deck extends React.Component {
 
   constructor(props) {
@@ -45,7 +47,8 @@ class Deck extends React.Component {
     });
   }
 
-  getCardPositions(layout) {
+  /* Get initial positions for card that templates are based off */
+  getInitialCardPositions(layout) {
 
     // Get window width and height in pixels
     const screenWidth = window.screen.width;
@@ -70,6 +73,21 @@ class Deck extends React.Component {
     }
   }
 
+  /* Return position & side template based on layout chosen */
+  getTemplate(x, y) {
+    // Get layout from props
+    const layout = this.props.layout;
+    console.log(layout);
+
+    // Get corresponding template from imported function
+    switch (layout) {
+      case 'free-mode':
+        return freeModeTemplates(x, y);
+      case 'solitaire':
+        return solitaireTemplates(x, y);
+    }
+  }
+
   /* Return deck as array of <PlayingCard/> components */
   createDeck(){
     // Initialize empty deck array
@@ -77,36 +95,16 @@ class Deck extends React.Component {
 
     // Get card positions corresponding to chosen layout
     const layout = this.props.layout;
-    var positions = this.getCardPositions(layout);
+    var positions = this.getInitialCardPositions(layout);
     const x = positions.x;
     const y = positions.y;
 
-    // 28 length
-
-    // Create side template for solitaire
-    const sideTemplate = [
-      'front',
-      'back', 'front',
-      'back', 'back', 'front',
-      'back', 'back', 'back', 'front',
-      'back', 'back', 'back', 'back', 'front',
-      'back', 'back', 'back', 'back', 'back', 'front',
-      'back', 'back', 'back', 'back', 'back', 'back', 'front'
-    ];
-
-    const positionTemplate = [
-      {x: x, y: y},
-      {x: x + 150, y: y}, {x: x + 150, y: y + 50},
-      {x: x + 300, y: y}, {x: x + 300, y: y + 50}, {x: x + 300, y: y + 100},
-      {x: x + 450, y: y}, {x: x + 450, y: y + 50}, {x: x + 450, y: y + 100}, {x: x + 450, y: y + 150},
-      {x: x + 600, y: y}, {x: x + 600, y: y + 50}, {x: x + 600, y: y + 100}, {x: x + 600, y: y + 150}, {x: x + 600, y: y + 200},
-      {x: x + 750, y: y}, {x: x + 750, y: y + 50}, {x: x + 750, y: y + 100}, {x: x + 750, y: y + 150}, {x: x + 750, y: y + 200}, {x: x + 750, y: y + 250},
-      {x: x + 900, y: y}, {x: x + 900, y: y + 50}, {x: x + 900, y: y + 100}, {x: x + 900, y: y + 150}, {x: x + 900, y: y + 200}, {x: x + 900, y: y + 250}, {x: x + 900, y: y + 300}
-    ];
+    // Get side & position template based on layout chosen
+    const template = this.getTemplate(x, y);
 
     for (let i=0; i < this.state.suitVals.length; i++) {
-      const side = i < sideTemplate.length ? sideTemplate[i] : 'back';
-      const position = i < positionTemplate.length ? positionTemplate[i] : {x: x + 900, y: 20};
+      const side = i < template.sides.length ? template.sides[i] : 'back';
+      const position = i < template.positions.length ? template.positions[i] : template.defaultLocation;
 
 
       deck.push(<PlayingCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x}/>)
