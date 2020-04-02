@@ -19,20 +19,25 @@ class Deck extends React.Component {
     }
   }
 
+  /* Shuffle cards and revert to original positions */
   shuffle = () => {
+    // get & initialize needed objects
     var currentSuitVals = [...this.state.suitVals];
     var newOrder = [];
 
+    // Create new order of cards
     while(currentSuitVals.length !== 0){
       var rand = Math.floor(Math.random() * (currentSuitVals.length));
       newOrder.push(currentSuitVals[rand]);
       currentSuitVals.splice(rand, 1);
     }
 
+    // Set state using new order
     this.setState({
       suitVals: newOrder
     });
 
+    // Set timeout while shuffle occurs
     setTimeout(() =>{
       for(var i=0;i<this.state.suitVals.length;i++){
         this.refs['card'+i].handleShuffle();
@@ -40,10 +45,71 @@ class Deck extends React.Component {
     });
   }
 
+  getCardPositions(layout) {
+
+    // Get window width and height in pixels
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+
+    switch(layout) {
+      case 'solitaire':
+        return { x: screenWidth / 10, y: screenHeight / 4 };
+        break;
+      case 'the-idiot':
+        console.log('idiot');
+        break;
+      case 'accordian':
+        console.log('acc');
+        break;
+      case 'pyramid':
+        console.log('pyramid');
+        break;
+      case 'free-mode':
+        return { x: screenWidth / 2 - 75, y: screenHeight / 4 };
+    }
+  }
+
+  /* Return deck as array of <PlayingCard/> components */
   createDeck(){
-  let deck = []
+    // Initialize empty deck array
+    let deck = [];
+
+    // Get card positions corresponding to chosen layout
+    const layout = this.props.layout;
+    var positions = this.getCardPositions(layout);
+    const x = positions.x;
+    const y = positions.y;
+
+    // 28 length
+
+    // Create side template for solitaire
+    const sideTemplate = [
+      'front',
+      'back', 'front',
+      'back', 'back', 'front',
+      'back', 'back', 'back', 'front',
+      'back', 'back', 'back', 'back', 'front',
+      'back', 'back', 'back', 'back', 'back', 'front',
+      'back', 'back', 'back', 'back', 'back', 'back', 'front'
+    ];
+
+    const positionTemplate = [
+      {x: x, y: y},
+      {x: x + 150, y: y}, {x: x + 150, y: y + 50},
+      {x: x + 300, y: y}, {x: x + 300, y: y + 50}, {x: x + 300, y: y + 100},
+      {x: x + 450, y: y}, {x: x + 450, y: y + 50}, {x: x + 450, y: y + 100}, {x: x + 450, y: y + 150},
+      {x: x + 600, y: y}, {x: x + 600, y: y + 50}, {x: x + 600, y: y + 100}, {x: x + 600, y: y + 150}, {x: x + 600, y: y + 200},
+      {x: x + 750, y: y}, {x: x + 750, y: y + 50}, {x: x + 750, y: y + 100}, {x: x + 750, y: y + 150}, {x: x + 750, y: y + 200}, {x: x + 750, y: y + 250},
+      {x: x + 900, y: y}, {x: x + 900, y: y + 50}, {x: x + 900, y: y + 100}, {x: x + 900, y: y + 150}, {x: x + 900, y: y + 200}, {x: x + 900, y: y + 250}, {x: x + 900, y: y + 300}
+    ];
+
     for (let i=0; i < this.state.suitVals.length; i++) {
-      deck.push(<PlayingCard ref={'card'+i} key={i} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img}/>)
+      const side = i < sideTemplate.length ? sideTemplate[i] : 'back';
+      const position = i < positionTemplate.length ? positionTemplate[i] : {x: x + 900, y: 20};
+
+
+      deck.push(<PlayingCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x}/>)
     }
     return deck;
   }

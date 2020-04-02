@@ -26,11 +26,11 @@ class PlayingCard extends React.Component{
       suit: this.props.suit,
       value: this.props.value,
       img: this.props.img,
-      top: 50,
-      left: 50,
+      top: this.props.top,
+      left: this.props.left,
       mouseDownX:0,
       mouseDownY:0,
-      side: "back",
+      side: this.props.side,
     };
   }
 

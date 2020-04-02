@@ -167,19 +167,7 @@ class Tabletop extends React.Component {
     });
   }
 
-
-
-
-
-
-  // darken Tabletop to create modal effect
-  darkenTabletop() {
-    console.log("darken");
-  }
-
   render() {
-
-    console.log(this.state.layout);
 
     return (
       <div id='display'>
@@ -198,7 +186,7 @@ class Tabletop extends React.Component {
       {/* Sandbox Mode */}
       {this.state.mode === "sandbox" &&
           <div id="table">
-            <GameButtons type="help" showing={this.state.showingHelpMessage} darkenTabletop={this.darkenTabletop} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
+            <GameButtons type="help" showing={this.state.showingHelpMessage} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
             <Deck ref="deck" img={this.state.img} layout={this.state.layout}/>
           </div>
       }
