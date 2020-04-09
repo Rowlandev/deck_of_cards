@@ -58,7 +58,6 @@ class Deck extends React.Component {
     switch(layout) {
       case 'solitaire':
         return { x: screenWidth / 10, y: screenHeight / 4 };
-        break;
       case 'the-idiot':
         console.log('idiot');
         break;
@@ -68,7 +67,8 @@ class Deck extends React.Component {
       case 'pyramid':
         console.log('pyramid');
         break;
-      case 'free-mode':
+      //default is free mode
+      default:
         return { x: screenWidth / 2 - 75, y: screenHeight / 4 };
     }
   }
@@ -81,7 +81,8 @@ class Deck extends React.Component {
 
     // Get corresponding template from imported function
     switch (layout) {
-      case 'free-mode':
+      //default is free mode
+      default:
         return freeModeTemplates(x, y);
       case 'solitaire':
         return solitaireTemplates(x, y);
@@ -107,7 +108,7 @@ class Deck extends React.Component {
       const position = i < template.positions.length ? template.positions[i] : template.defaultLocation;
 
 
-      deck.push(<PlayingCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x}/>)
+      deck.push(<PlayingCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x} shuffleX={x} shuffleY={y}/>)
     }
     return deck;
   }

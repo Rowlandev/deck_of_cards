@@ -17,6 +17,7 @@
     "react-draggable": "^4.2.0",
     "react-icons": "^3.9.0",
     "react-playing-card": "^0.2.5",
+    "react-remove-scroll-bar": "^2.0.0",
     "react-scripts": "3.4.0"
   },
   "scripts": {

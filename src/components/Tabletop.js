@@ -1,5 +1,6 @@
 // SYSTEM IMPORTS
 import React from "react";
+import {RemoveScrollBar} from 'react-remove-scroll-bar';
 
 // IMAGE IMPORTS
 import Prof1 from "../images/backs/prof1.JPG"
@@ -171,6 +172,7 @@ class Tabletop extends React.Component {
 
     return (
       <div id='display'>
+      <RemoveScrollBar />
 
       {/* Main Menu */}
       {this.state.mode === "mainMenu" &&
@@ -216,9 +218,9 @@ class Tabletop extends React.Component {
         <p id="title">Choose Your Game Mode</p>
         <div>
           <p><button className="button" onClick={this.loadSolitaire} text={help.solitaire}>Solitaire</button></p>
-          <p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
+          {/*<p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
           <p><button className="button" onClick={this.loadAccordian} text={help.accordian}>Accordian</button></p>
-          <p><button className="button" onClick={this.loadPyramid} text={help.pyramid}>Pyramid</button></p>
+          <p><button className="button" onClick={this.loadPyramid} text={help.pyramid}>Pyramid</button></p>*/}
           <p><button className="button" onClick={this.loadFreeMode} text={help.freeMode}>Free Mode</button></p>
         </div>
       </div>
