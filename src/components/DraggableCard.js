@@ -1,5 +1,9 @@
 import React from "react";
 import "../css/PlayingCard.css";
+<<<<<<< HEAD:src/components/DraggableCard.js
+=======
+import Draggable from 'react-draggable';
+>>>>>>> 5a96e188053fe4e99debe927bf2fb42cffc7c1d0:src/components/PlayingCard.js
 
 // import red corner suit icons
 import RedDiamondCorner from "../images/red-corners/diamond.png";
@@ -26,6 +30,7 @@ class DraggableCard extends React.Component{
       suit: this.props.suit,
       value: this.props.value,
       img: this.props.img,
+<<<<<<< HEAD:src/components/DraggableCard.js
       top: 50,
       left: 50,
       mouseDownX:0,
@@ -34,6 +39,46 @@ class DraggableCard extends React.Component{
     };
   }
 
+=======
+      top: this.props.top,
+      left: this.props.left,
+      shuffleX: this.props.shuffleX,
+      shuffleY: this.props.shuffleY,
+      side: this.props.side,
+      deltaX: null,
+      deltaY: null,
+      flipable: true
+    };
+  }
+
+  onClick = (e) => {
+    if(this.state.flipable)
+      {this.flipCard(e)}
+    else
+      {this.setState({flipable: true})}
+  }
+
+  onStart = (e) => {
+    this.setState({
+      deltaX: e.clientX - this.state.left,
+      deltaY: e.clientY - this.state.top
+    })
+  }
+
+  onStop = (e) => {
+    this.setState({
+      top: e.clientY - this.state.deltaY,
+      left: e.clientX - this.state.deltaX,
+    })
+  }
+
+  onDrag = (e) => {
+    this.setState({
+      flipable:false
+    })
+  }
+
+>>>>>>> 5a96e188053fe4e99debe927bf2fb42cffc7c1d0:src/components/PlayingCard.js
   flipCard = () => {
     var newSide = null;
     if (this.state.side === "back"){
@@ -51,8 +96,8 @@ class DraggableCard extends React.Component{
     this.setState({
       suit: this.props.suit,
       value: this.props.value,
-      top: 50,
-      left: 50,
+      top: this.props.shuffleY,
+      left: this.props.shuffleX,
       side: "back",
     })
   }
@@ -89,9 +134,6 @@ class DraggableCard extends React.Component{
     var bottomRightSuit;
     var bottomRightValue;
     var largeSuit;
-    var offset = {top: this.state.top + "px",
-                  left: this.state.left + "px"
-                }
 
     // assign card red suit
     if (this.state.suit === "heart") {
@@ -175,14 +217,25 @@ class DraggableCard extends React.Component{
     }
 
     return (
+<<<<<<< HEAD:src/components/DraggableCard.js
       <div id="card" draggable data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.dragStart(e)} onDragEnd={(e) => this.drop(e)}>
+=======
+      //<div id="card" style={{zIndex:"auto"}} onMouseUp={(e) => this.onMouseUp(e)} onMouseDown={(e) => this.onMouseDown(e)} onMouseMove={(e) => this.onMouseMove(e)}>
+      <Draggable
+        position={{x: this.state.left, y: this.state.top - 500}}
+        onStart={this.handleStart, this.onStart}
+        onDrag={this.handleDrag, this.onDrag}
+        onStop={this.handleStop, this.onStop}>
+
+      <div id="card" onClick={(e) => this.onClick(e)}>
+>>>>>>> 5a96e188053fe4e99debe927bf2fb42cffc7c1d0:src/components/PlayingCard.js
       {this.state.side === "back" &&
-        <div id="back-of-card" style={offset}>
+        <div id="back-of-card">
           <img src={this.props.img} alt="prof cardback" id="back-image" draggable={false}/>
         </div>
       }
       {this.state.side === "front" &&
-        <div id="playing-card" style={offset}>
+        <div id="playing-card">
           {topLeftSuit}
           {bottomRightSuit}
           {topLeftValue}
@@ -191,6 +244,8 @@ class DraggableCard extends React.Component{
         </div>
       }
       </div>
+      </Draggable>
+
     );
   }
 }
