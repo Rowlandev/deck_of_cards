@@ -18,14 +18,6 @@ const help = {
     header: "Solitaire",
     body: "The first objective is to release and play into position certain cards to build up each foundation, in sequence and in suit, from the ace through the king. The ultimate objective is to build the whole pack onto the foundations, and if that can be done, the Solitaire game is won."
   },
-  theIdiot: {
-    header: "The Idiot",
-    body: "In this game, the goal is to be anything but the last person to play out all the cards from their hand. You play cards by either matching the current number in the discard pile or playing a higher-ranking card. The last person to empty their hand is declared the loser!."
-  },
-  accordian: {
-    header: "Accordian",
-    body: "Accordion is a solitaire game using one deck of playing cards. The object is to compress the entire deck into one pile like an accordion!"
-  },
   pyramid: {
     header: "Pyramid",
     body: "The objective of Pyramid is to remove pairs of cards that add up to the total of the highest card in the deck from a pyramid arrangement of 28 cards. All cards (cards from the pyramid and cards from the stock) must be moved to the foundation. The pyramid is demolished by the end, if it stands you lose."
@@ -71,22 +63,6 @@ loadPyramid = () => {
     });
   }
 
-  loadAccordian = () => {
-    this.setState({
-      mode: 'sandbox',
-      layout: 'accordian',
-      helpText: help.accordian
-    });
-  }
-
-  loadTheIdiot = () => {
-    this.setState({
-      mode: 'sandbox',
-      layout: 'the-idiot',
-      helpText: help.theIdiot
-    });
-  }
-
 loadSolitaire = () => {
   this.setState({
       mode: 'sandbox',
@@ -95,26 +71,15 @@ loadSolitaire = () => {
     });
   }
 
-  enterCustomize = (e) => {
+  goToCustomize = (e) => {
     this.setState({
       mode: "customize"
     })
   }
 
-  enterChoosingLayout = (e) => {
-    this.setState({
-      mode: "choosingLayout"
-    });
-  }
-
   //called from GameButtons to the sandbox deck
   shuffle = (e) => {
     this.refs.sandboxDeck.shuffle();
-  }
-
-  //called form Gamebuttons to the war deck
-  resetWarDeck = (e) => {
-    this.refs.warDeck.reset();
   }
 
   goToMainMenu = (e) => {
@@ -135,7 +100,7 @@ loadSolitaire = () => {
     });
   }
 
-  enterSandboxMode = () => {
+  goToSandboxMode = () => {
     this.setState({
       mode: 'sandbox',
       layout: 'free-mode',
@@ -143,20 +108,20 @@ loadSolitaire = () => {
     });
   }
 
-  enterGameMenu = () => {
+  goToGameMenu = () => {
     this.setState({
       mode: 'choosingGame'
     })
   }
 
-  enterWar = () => {
+  goToWar = () => {
     this.setState({
       mode: 'war',
       helpText: help.war
     })
   }
 
-  enterAbout = () => {
+  goToAbout = () => {
     this.setState({
       mode: 'about'
     })
@@ -173,9 +138,9 @@ loadSolitaire = () => {
           <div className='main-menu'>
             <p id="title">deck_of_cards</p>
             <p id="creators">By: Braden Batman, Chase Grainger, and Matthew Heck</p>
-            <p><button className="button" onClick={this.enterGameMenu}>Play</button></p>
-            <p><button className="button" onClick={this.enterCustomize}>Customize</button></p>
-            <p><button className="button" onClick={this.enterAbout}>About</button></p>
+            <p><button className="button" onClick={this.goToGameMenu}>Play</button></p>
+            <p><button className="button" onClick={this.goToCustomize}>Customize</button></p>
+            <p><button className="button" onClick={this.goToAbout}>About</button></p>
           </div>
       }
 
@@ -199,8 +164,8 @@ loadSolitaire = () => {
       <div className="main-menu">
         <p id="title">Choose A Game</p>
         <div>
-          <p><button className="button" onClick={this.enterWar}>War</button></p>
-          <p><button className="button" onClick={this.enterSandboxMode}>Sandbox Mode</button></p>
+          <p><button className="button" onClick={this.goToWar}>War</button></p>
+          <p><button className="button" onClick={this.goToSandboxMode}>Sandbox Mode</button></p>
         </div>
       </div>
       }
@@ -211,8 +176,6 @@ loadSolitaire = () => {
         <p id="title">Choose A Premade Layout</p>
         <div>
           <p><button className="button" onClick={this.loadSolitaire} text={help.solitaire}>Solitaire</button></p>
-          <p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
-          <p><button className="button" onClick={this.loadAccordian} text={help.accordian}>Accordian</button></p>
           <p><button className="button" onClick={this.loadPyramid} text={help.pyramid}>Pyramid</button></p>
           <p><button className="button" onClick={this.loadFreeMode} text={help.freeMode}>Sandbox Mode</button></p>
         </div>

@@ -78,6 +78,8 @@ class SandboxDeck extends React.Component {
         return solitaireTemplates(x, y);
       case 'pyramid':
         return pyramidTemplates(x, y);
+      case 'free-mode':
+        return freeModeTemplates(x, y);
       default:
         return freeModeTemplates(x, y);
     }
