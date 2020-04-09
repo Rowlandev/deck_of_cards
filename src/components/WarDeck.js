@@ -64,8 +64,9 @@ class WarDeck extends React.Component {
     } else {
       var tempDeck1 = [...this.state.deck1];
       var tempDeck2 = [...this.state.deck2];
-      var playerCard = {suit: this.state.deck1[this.state.deck1.length-1][0], val: this.state.deck1[this.state.deck1.length-1][1]};
-      var opponentCard = {suit: this.state.deck2[this.state.deck2.length-1][0], val: this.state.deck2[this.state.deck2.length-1][1]};
+
+      var playerCard = {suit: tempDeck1[tempDeck1.length-1][0], val: tempDeck1[tempDeck1.length-1][1]};
+      var opponentCard = {suit: tempDeck2[tempDeck2.length-1][0], val: tempDeck2[tempDeck2.length-1][1]};
 
       if (this.state.deck1[this.state.deck1.length-1][1] > this.state.deck2[this.state.deck2.length-1][1]){
         //player win condition
