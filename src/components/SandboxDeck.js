@@ -2,8 +2,8 @@
 import React from "react";
 
 // CUSTOM IMPORTS
-import DraggableCard from "./DraggableCard.js";
-import {freeModeTemplates} from '../Templates.js';
+import SandboxCard from "./SandboxCard.js";
+import {solitaireTemplates, freeModeTemplates, pyramidTemplates} from '../Templates.js';
 
 class SandboxDeck extends React.Component {
 
@@ -55,8 +55,6 @@ class SandboxDeck extends React.Component {
 
     // return initial position object
     switch(layout) {
-
-
       case 'solitaire':
         return { x: screenWidth / 10, y: screenHeight / 4 };
       case 'pyramid':
@@ -68,9 +66,21 @@ class SandboxDeck extends React.Component {
     }
   }
 
-  /*Return position & side template based on layout chosen*/
+  /* Return position & side template based on layout chosen */
   getTemplate(x, y) {
-    return freeModeTemplates(x, y);
+    // Get layout from props
+    const layout = this.props.layout;
+    console.log(layout);
+
+    // Get corresponding template from imported function
+    switch (layout) {
+      case 'solitaire':
+        return solitaireTemplates(x, y);
+      case 'pyramid':
+        return pyramidTemplates(x, y);
+      default:
+        return freeModeTemplates(x, y);
+    }
   }
 
   /* Return deck as array of <PlayingCard/> components */
@@ -80,19 +90,17 @@ class SandboxDeck extends React.Component {
 
     // Get card positions corresponding to chosen layout
     const layout = this.props.layout;
-    var positions = this.getInitialCardPositions(layout);
-    const x = positions.x;
-    const y = positions.y;
+    var initialPositions = this.getInitialCardPositions(layout);
 
     // Get side & position template based on layout chosen
-    const template = this.getTemplate(x, y);
+    const template = this.getTemplate(initialPositions.x, initialPositions.y);
 
     for (let i=0; i < this.state.suitVals.length; i++) {
       const side = i < template.sides.length ? template.sides[i] : 'back';
       const position = i < template.positions.length ? template.positions[i] : template.defaultLocation;
 
 
-      deck.push(<DraggableCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x} shuffleX={x} shuffleY={y}/>)
+      deck.push(<SandboxCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x} shuffleX={initialPositions.x} shuffleY={initialPositions.y}/>)
     }
     return deck;
   }

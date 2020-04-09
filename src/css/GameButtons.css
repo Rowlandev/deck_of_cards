@@ -1,7 +1,8 @@
 .button-modal-container {
   text-align: center;
   position: relative;
-  height: 100px;
+  height: 400px;
+  margin-bottom: -400px;
 }
 
 
