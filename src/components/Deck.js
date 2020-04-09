@@ -4,7 +4,7 @@ import React from "react";
 // CUSTOM IMPORTS
 import PlayingCard from "./PlayingCard.js";
 
-import { solitaireTemplates, freeModeTemplates } from '../Templates.js';
+import { solitaireTemplates, freeModeTemplates, pyramidTemplates } from '../Templates.js';
 
 class Deck extends React.Component {
 
@@ -54,22 +54,16 @@ class Deck extends React.Component {
     const screenWidth = window.screen.width;
     const screenHeight = window.screen.height;
 
-
+    // return initial position object
     switch(layout) {
       case 'solitaire':
         return { x: screenWidth / 10, y: screenHeight / 4 };
-        break;
-      case 'the-idiot':
-        console.log('idiot');
-        break;
-      case 'accordian':
-        console.log('acc');
-        break;
       case 'pyramid':
-        console.log('pyramid');
-        break;
+        return { x: screenWidth / 2 - 55, y: screenHeight / 8 };
       case 'free-mode':
-        return { x: screenWidth / 2 - 75, y: screenHeight / 4 };
+        return { x: screenWidth / 2 - 55, y: screenHeight / 4 };
+      default:
+        return { x: screenWidth / 2 - 55, y: screenHeight / 4 };
     }
   }
 
@@ -85,6 +79,10 @@ class Deck extends React.Component {
         return freeModeTemplates(x, y);
       case 'solitaire':
         return solitaireTemplates(x, y);
+      case 'pyramid':
+        return pyramidTemplates(x, y);
+      default:
+      return freeModeTemplates(x, y);
     }
   }
 

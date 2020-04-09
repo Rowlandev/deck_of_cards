@@ -22,14 +22,6 @@ const help = {
     header: "Solitaire",
     body: "The first objective is to release and play into position certain cards to build up each foundation, in sequence and in suit, from the ace through the king. The ultimate objective is to build the whole pack onto the foundations, and if that can be done, the Solitaire game is won."
   },
-  theIdiot: {
-    header: "The Idiot",
-    body: "In this game, the goal is to be anything but the last person to play out all the cards from their hand. You play cards by either matching the current number in the discard pile or playing a higher-ranking card. The last person to empty their hand is declared the loser!."
-  },
-  accordian: {
-    header: "Accordian",
-    body: "Accordion is a solitaire game using one deck of playing cards. The object is to compress the entire deck into one pile like an accordion!"
-  },
   pyramid: {
     header: "Pyramid",
     body: "The objective of Pyramid is to remove pairs of cards that add up to the total of the highest card in the deck from a pyramid arrangement of 28 cards. All cards (cards from the pyramid and cards from the stock) must be moved to the foundation. The pyramid is demolished by the end, if it stands you lose."
@@ -216,8 +208,6 @@ class Tabletop extends React.Component {
         <p id="title">Choose Your Game Mode</p>
         <div>
           <p><button className="button" onClick={this.loadSolitaire} text={help.solitaire}>Solitaire</button></p>
-          <p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
-          <p><button className="button" onClick={this.loadAccordian} text={help.accordian}>Accordian</button></p>
           <p><button className="button" onClick={this.loadPyramid} text={help.pyramid}>Pyramid</button></p>
           <p><button className="button" onClick={this.loadFreeMode} text={help.freeMode}>Free Mode</button></p>
         </div>

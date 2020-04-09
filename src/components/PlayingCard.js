@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/PlayingCard.css";
-import ReactDOM from "react-dom";
 
 // import red corner suit icons
 import RedDiamondCorner from "../images/red-corners/diamond.png";
