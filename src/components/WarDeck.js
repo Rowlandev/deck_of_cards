@@ -43,8 +43,8 @@ class WarDeck extends React.Component {
   reset = (pCard, oCard) => {
     // Set timeout while reset occurs
     setTimeout(() =>{
-        this.refs['playerWarzoneCard'].reset(pCard.suit, pCard.val);
-        this.refs['opponentWarzoneCard'].reset(oCard.suit, oCard.val);
+        this.refs['playerWarzoneCard'].reset(pCard[0], pCard[1]);
+        this.refs['opponentWarzoneCard'].reset(oCard[0], oCard[1]);
     });
   }
 
@@ -65,8 +65,8 @@ class WarDeck extends React.Component {
       var tempDeck1 = [...this.state.deck1];
       var tempDeck2 = [...this.state.deck2];
 
-      var playerCard = {suit: tempDeck1[tempDeck1.length-1][0], val: tempDeck1[tempDeck1.length-1][1]};
-      var opponentCard = {suit: tempDeck2[tempDeck2.length-1][0], val: tempDeck2[tempDeck2.length-1][1]};
+      var playerCard = tempDeck1[tempDeck1.length-1];
+      var opponentCard = tempDeck2[tempDeck2.length-1];
 
       if (this.state.deck1[this.state.deck1.length-1][1] > this.state.deck2[this.state.deck2.length-1][1]){
         //player win condition
