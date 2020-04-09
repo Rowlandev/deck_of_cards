@@ -75,9 +75,6 @@ class Deck extends React.Component {
 
     // Get corresponding template from imported function
     switch (layout) {
-      //default is free mode
-      default:
-        return freeModeTemplates(x, y);
       case 'solitaire':
         return solitaireTemplates(x, y);
       case 'pyramid':
