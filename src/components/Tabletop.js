@@ -40,6 +40,10 @@ const help = {
   freeMode: {
     header: "Free Mode",
     body: "Welcome to free mode - feel free to move the cards from the deck however you would like :)"
+  },
+  war: {
+    header: "War",
+    body: "This is the game of War. The goal is to flip cards and when the value of your card is higher than your opponent, you win."
   }
 };
 
@@ -153,7 +157,8 @@ loadSolitaire = () => {
 
   enterWar = () => {
     this.setState({
-      mode: 'war'
+      mode: 'war',
+      helpText: help.war
     })
   }
 
@@ -178,7 +183,7 @@ loadSolitaire = () => {
       {/* Sandbox Mode */}
       {this.state.mode === "sandbox" &&
           <div id="table">
-            <GameButtons type="help" showing={this.state.showingHelpMessage} goToLayoutMenu={this.goToLayoutMenu} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
+            <GameButtons type="help" sandbox={true} showing={this.state.showingHelpMessage} goToLayoutMenu={this.goToLayoutMenu} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
             <SandboxDeck ref="sandboxDeck" img={this.state.img} layout={this.state.layout}/>
           </div>
       }
@@ -217,7 +222,7 @@ loadSolitaire = () => {
       {/* War Layout */}
       {this.state.mode === "war" &&
       <div id="war-table">
-        <GameButtons type="help" showing={this.state.showingHelpMessage} shuffle={this.resetWarDeck} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
+        <GameButtons type="help" sandbox={false} showing={this.state.showingHelpMessage} shuffle={this.resetWarDeck} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
         <WarDeck ref="warDeck" img={this.state.img}/>
       </div>
       }
