@@ -2,7 +2,7 @@
 import React from "react";
 
 // CUSTOM IMPORTS
-import SandboxCard from "./SandboxCard.js";
+import DraggableCard from "./DraggableCard.js";
 import {solitaireTemplates, freeModeTemplates, pyramidTemplates} from '../Templates.js';
 
 class SandboxDeck extends React.Component {
@@ -100,7 +100,7 @@ class SandboxDeck extends React.Component {
       const position = i < template.positions.length ? template.positions[i] : template.defaultLocation;
 
 
-      deck.push(<SandboxCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x} shuffleX={initialPositions.x} shuffleY={initialPositions.y}/>)
+      deck.push(<DraggableCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x} shuffleX={initialPositions.x} shuffleY={initialPositions.y}/>)
     }
     return deck;
   }

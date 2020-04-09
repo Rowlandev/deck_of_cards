@@ -180,7 +180,6 @@ class DraggableCard extends React.Component{
     }
 
     return (
-      //<div id="card" style={{zIndex:"auto"}} onMouseUp={(e) => this.onMouseUp(e)} onMouseDown={(e) => this.onMouseDown(e)} onMouseMove={(e) => this.onMouseMove(e)}>
       <Draggable
         position={{x: this.state.left, y: this.state.top}}
         onStart={this.handleStart, this.onStart}

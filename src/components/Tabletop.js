@@ -4,13 +4,6 @@ import {RemoveScrollBar} from 'react-remove-scroll-bar';
 
 // IMAGE IMPORTS
 import Prof1 from "../images/backs/prof1.JPG"
-import Prof2 from "../images/backs/prof2.PNG"
-import Prof3 from "../images/backs/prof3.JPG"
-import Tim from "../images/backs/tim.PNG"
-import Flavortown from "../images/backs/flavortown.PNG"
-import NickCage from "../images/backs/nick_cage.PNG"
-import TheGuy from "../images/backs/the_guy.PNG"
-import Squid from "../images/backs/squid.PNG"
 
 // CUSTOM IMPORTS
 import GameButtons from "./GameButtons.js";
@@ -145,7 +138,8 @@ loadSolitaire = () => {
   enterSandboxMode = () => {
     this.setState({
       mode: 'sandbox',
-      layout: 'free-mode'
+      layout: 'free-mode',
+      helpText: help.freeMode
     });
   }
 
