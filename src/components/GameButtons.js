@@ -12,7 +12,7 @@ class GameButtons extends React.Component {
     this.state = {
       showing: this.props.showing,
       modalClassName: "modal-hidden",
-      sandbox: this.props.sandbox
+      mode: this.props.mode
     };
   }
 
@@ -43,87 +43,78 @@ class GameButtons extends React.Component {
     this.props.goToLayoutMenu()
   }
 
-  getElements = () => {
-    if (this.state.sandbox){
-      return (
-        <div className="button-modal-container">
-
-          {/* Darkened Background*/}
-          <div className={this.state.modalClassName}></div>
-
-          <img src={ShuffleIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
-          <img src={LayoutIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="layout icon" id="layout-icon" onClick={this.goToLayoutMenu}/>
-          <img src={HelpIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
-          <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
-
-          {/* Header & Body*/}
-          {this.state.showing &&
-            <div id="header-and-body">
-
-              <div id="header">
-                <p id='header-text'>{this.props.helpText.header}</p>
-              </div>
-
-              <div id="body">
-                <p id='body-text'>{this.props.helpText.body}</p>
-              </div>
-
-              <div id="close-button-container">
-                  <div id="close-button" onClick={this.toggleHelp}>
-                    <p id="close-button-text">Close</p>
-                  </div>
-              </div>
-
-            </div>
-          }
-
-          {/* Close Modal Button */}
-
-
-        </div>
-      );
-    }
-    else {
-      return (
-        <div className="button-modal-container" draggable={false}>
-
-          {/* Darkened Background*/}
-          <div className={this.state.modalClassName}></div>
-
-          <img src={HelpIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
-          <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
-
-          {/* Header & Body*/}
-          {this.state.showing &&
-            <div id="header-and-body">
-
-              <div id="header">
-                <p id='header-text'>{this.props.helpText.header}</p>
-              </div>
-
-              <div id="body">
-                <p id='body-text'>{this.props.helpText.body}</p>
-              </div>
-
-              <div id="close-button-container">
-                  <div id="close-button" onClick={this.toggleHelp}>
-                    <p id="close-button-text">Close</p>
-                  </div>
-              </div>
-
-            </div>
-          }
-
-          {/* Close Modal Button */}
-
-        </div>
-      );
-    }
-  }
-
   render() {
     return (
-      this.getElements()
+      <div className="button-modal-container">
+
+        {/* Darkened Background*/}
+        <div className={this.state.modalClassName}></div>
+
+        {/* Sandbox Buttons */}
+        {this.state.mode === "sandbox" && <div>
+        <img src={ShuffleIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
+        <img src={LayoutIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="layout icon" id="layout-icon" onClick={this.goToLayoutMenu}/>
+        <img src={HelpIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+        <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+
+
+        {this.state.showing &&
+          <div id="header-and-body">
+
+            <div id="header">
+              <p id='header-text'>{this.props.helpText.header}</p>
+            </div>
+
+            <div id="body">
+              <p id='body-text'>{this.props.helpText.body}</p>
+            </div>
+
+            <div id="close-button-container">
+                <div id="close-button" onClick={this.toggleHelp}>
+                  <p id="close-button-text">Close</p>
+                </div>
+            </div>
+          </div>
+        }
+        </div>
+      }
+
+      {/* Game Buttons */}
+      {this.state.mode === "game" && <div>
+      <img src={HelpIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+      <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+
+      {/* Header & Body*/}
+      {this.state.showing &&
+        <div id="header-and-body">
+
+          <div id="header">
+            <p id='header-text'>{this.props.helpText.header}</p>
+          </div>
+
+          <div id="body">
+            <p id='body-text'>{this.props.helpText.body}</p>
+          </div>
+
+          <div id="close-button-container">
+              <div id="close-button" onClick={this.toggleHelp}>
+                <p id="close-button-text">Close</p>
+              </div>
+          </div>
+
+        </div>
+      }
+      </div>
+    }
+
+    {/* Menu Buttons */}
+    {this.state.mode === "menu" && <div>
+    <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+    </div>
+    }
+
+  {/* Close Modal Button */}
+  </div>
     );
   }
 }

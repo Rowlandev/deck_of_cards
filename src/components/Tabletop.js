@@ -162,6 +162,12 @@ loadSolitaire = () => {
     })
   }
 
+  enterAbout = () => {
+    this.setState({
+      mode: 'about'
+    })
+  }
+
   render() {
 
     return (
@@ -173,16 +179,16 @@ loadSolitaire = () => {
           <div className='main-menu'>
             <p id="title">deck_of_cards</p>
             <p id="creators">By: Braden Batman, Chase Grainger, and Matthew Heck</p>
-            <p><button className="button" onClick={this.enterGameMenu}>Play Game</button></p>
-            <p><button className="button" onClick={this.enterSandboxMode}>Sandbox Mode</button></p>
+            <p><button className="button" onClick={this.enterGameMenu}>Play</button></p>
             <p><button className="button" onClick={this.enterCustomize}>Customize</button></p>
+            <p><button className="button" onClick={this.enterAbout}>About</button></p>
           </div>
       }
 
       {/* Sandbox Mode */}
       {this.state.mode === "sandbox" &&
           <div id="table">
-            <GameButtons type="help" sandbox={true} showing={this.state.showingHelpMessage} goToLayoutMenu={this.goToLayoutMenu} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
+            <GameButtons type="help" mode={"sandbox"} showing={this.state.showingHelpMessage} goToLayoutMenu={this.goToLayoutMenu} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
             <SandboxDeck ref="sandboxDeck" img={this.state.img} layout={this.state.layout}/>
           </div>
       }
@@ -197,9 +203,10 @@ loadSolitaire = () => {
       {/* Choose Game Mode */}
       {this.state.mode === "choosingGame" &&
       <div className="main-menu">
-        <p id="title">Choose A Game Mode</p>
+        <p id="title">Choose A Game</p>
         <div>
           <p><button className="button" onClick={this.enterWar}>War</button></p>
+          <p><button className="button" onClick={this.enterSandboxMode}>Sandbox Mode</button></p>
         </div>
       </div>
       }
@@ -221,8 +228,19 @@ loadSolitaire = () => {
       {/* War Layout */}
       {this.state.mode === "war" &&
       <div id="war-table">
-        <GameButtons type="help" sandbox={false} showing={this.state.showingHelpMessage} shuffle={this.resetWarDeck} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
+        <GameButtons type="help" mode={"game"} showing={this.state.showingHelpMessage} shuffle={this.resetWarDeck} goToMainMenu={this.goToMainMenu} helpText={this.state.helpText}/>
         <WarDeck ref="warDeck" img={this.state.img}/>
+      </div>
+      }
+
+      {/* Choose Layout */}
+      {this.state.mode === "about" &&
+      <div className="main-menu">
+      <GameButtons type="help" mode={"menu"} goToMainMenu={this.goToMainMenu}/>
+        <p id="title">About</p>
+        <div>
+          <p id="text">This is a web application developed by Braden Batman, Chase Grainger, and Matthew Heck. You can play premade games, or play around with a deck of cards and premade card layouts in Sandbox mode.</p>
+        </div>
       </div>
       }
 

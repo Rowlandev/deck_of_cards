@@ -13,7 +13,18 @@
   font-family: "Andale Mono", AndaleMono, monospace;
   font-size: 75px;
   color: white;
+  padding-top: 50px;
+}
+
+#text {
+  margin: 20px;
+  text-align: center;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 20px;
+  color: white;
   padding-top: 40px;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 #creators {
