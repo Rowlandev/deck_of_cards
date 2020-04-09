@@ -176,7 +176,6 @@ loadSolitaire = () => {
             <p><button className="button" onClick={this.enterGameMenu}>Play Game</button></p>
             <p><button className="button" onClick={this.enterSandboxMode}>Sandbox Mode</button></p>
             <p><button className="button" onClick={this.enterCustomize}>Customize</button></p>
-            <p><button className="button">Help</button></p>
           </div>
       }
 
@@ -198,7 +197,7 @@ loadSolitaire = () => {
       {/* Choose Game Mode */}
       {this.state.mode === "choosingGame" &&
       <div className="main-menu">
-        <p id="title">Choose Your Game Mode</p>
+        <p id="title">Choose A Game Mode</p>
         <div>
           <p><button className="button" onClick={this.enterWar}>War</button></p>
         </div>
@@ -208,7 +207,7 @@ loadSolitaire = () => {
       {/* Choose Layout */}
       {this.state.mode === "layout" &&
       <div className="main-menu">
-        <p id="title">Choose Your Layout</p>
+        <p id="title">Choose A Premade Layout</p>
         <div>
           <p><button className="button" onClick={this.loadSolitaire} text={help.solitaire}>Solitaire</button></p>
           <p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
