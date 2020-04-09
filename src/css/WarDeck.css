@@ -164,9 +164,14 @@
 
 #winner {
   display: inline-block;
-  margin: 0;
+  position: relative;
   text-align: center;
   font-family: "Andale Mono", AndaleMono, monospace;
   font-size: 20px;
   color: LightGray;
+}
+
+#cardzone {
+  position: relative;
+  margin-top: 20%
 }
