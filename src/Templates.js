@@ -25,6 +25,33 @@ export function solitaireTemplates(x, y) {
   };
 }
 
+export function pyramidTemplates(x, y) {
+  return {
+    sides: [
+      'front',
+      'front', 'front',
+      'front', 'front', 'front',
+      'front', 'front', 'front', 'front',
+      'front', 'front', 'front', 'front', 'front',
+      'front', 'front', 'front', 'front', 'front', 'front',
+      'front', 'front', 'front', 'front', 'front', 'front', 'front',
+      'front', 'front'
+    ],
+    positions: [
+      {x: x, y: y},
+      {x: x - 107.25, y: y + 60}, {x: x + 107.25, y: y + 60},
+      {x: x - 214.5, y: y + 180}, {x: x, y: y + 180}, {x: x + 214.5, y: y + 180},
+      {x: x - 321.75, y: y + 240}, {x: x - 107.25, y: y + 240}, {x: x + 107.25, y: y + 240}, {x: x + 321.75, y: y + 240},
+      {x: x - 429, y: y + 360}, {x: x - 214.5, y: y + 360}, {x: x, y: y + 360}, {x: x + 214.5, y: y + 360}, {x: x + 429, y: y + 360},
+      {x: x + 520, y: y}
+    ],
+    defaultLocation: {
+      x: x + 400,
+      y: y
+    }
+  };
+}
+
 export function freeModeTemplates(x, y) {
   return {
     sides: [],
