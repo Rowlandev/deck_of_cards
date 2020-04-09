@@ -164,12 +164,12 @@ class WarDeck extends React.Component {
         <p id='winner'>{this.state.winMessage}</p> <div id="cardzone">
         <div id='player-warzone'>
           <div id='player-war-card'>
-            <GameCard className='card' ref='playerWarzoneCard' key='3' suit={this.state.deck1[this.state.deck1.length-1][0]} value={this.state.deck1[this.state.deck1.length-1][1]} img={this.state.img} side='back'/>
+            <GameCard className='card' ref='playerWarzoneCard' key='3' suit={this.state.deck1[this.state.deck1.length-1][0]} value={this.state.deck1[this.state.deck1.length-1][1]} img={this.state.img}/>
           </div>
         </div>
         <div id='opponent-warzone'>
           <div id='opponent-war-card'>
-            <GameCard className='card' ref='opponentWarzoneCard' key='4' suit={this.state.deck2[this.state.deck2.length-1][0]} value={this.state.deck2[this.state.deck2.length-1][1]} img={this.state.img} side='back'/>
+            <GameCard className='card' ref='opponentWarzoneCard' key='4' suit={this.state.deck2[this.state.deck2.length-1][0]} value={this.state.deck2[this.state.deck2.length-1][1]} img={this.state.img}/>
           </div>
         </div> </div>
       </div>
