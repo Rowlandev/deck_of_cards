@@ -44,13 +44,15 @@ class WarDeck extends React.Component {
   }
 
   reset = () => {
-    // TODO
-
+    // Set timeout while reset occurs
+    setTimeout(() =>{
+        this.refs['playerWarzoneCard'].reset();
+        this.refs['opponentWarzoneCard'].reset();
+    });
   }
 
-
-
   handleFlip = () => {
+
     if (this.state.deck1.length === 1){
       winMessage="You lose! Press the Exit button to return to the main menu."
       this.setState({
@@ -66,26 +68,32 @@ class WarDeck extends React.Component {
       var tempDeck2 = [...this.state.deck2];
       var winMessage = "";
       if (this.state.deck1[this.state.deck1.length-1][1] > this.state.deck2[this.state.deck2.length-1][1]){
+        //I made it so that both top cards are put at the bottom of the winner's deck
+        tempDeck1.unshift([this.state.deck1[this.state.deck1.length-1][0], this.state.deck1[this.state.deck1.length-1][1]])
         tempDeck1.unshift([this.state.deck2[this.state.deck2.length-1][0], this.state.deck2[this.state.deck2.length-1][1]])
+        tempDeck1.pop();
         tempDeck2.pop();
         winMessage = "You win this round. Press flip to continue";
       } else if (this.state.deck1[this.state.deck1.length-1][1] < this.state.deck2[this.state.deck2.length-1][1]){
         tempDeck2.unshift([this.state.deck1[this.state.deck1.length-1][0], this.state.deck1[this.state.deck1.length-1][1]])
+        tempDeck2.unshift([this.state.deck2[this.state.deck2.length-1][0], this.state.deck2[this.state.deck2.length-1][1]])
         tempDeck1.pop();
+        tempDeck2.pop();
         winMessage = "CPU wins this round. Press flip to continue";
       } else {
           if (this.state.deck1[this.state.deck1.length-2][1] > this.state.deck2[this.state.deck2.length-2][1]){
+            //I did not update this
             tempDeck1.unshift([this.state.deck2[this.state.deck2.length-1][0], this.state.deck2[this.state.deck2.length-1][1]])
             tempDeck2.pop();
             tempDeck1.unshift([this.state.deck2[this.state.deck2.length-1][0], this.state.deck2[this.state.deck2.length-1][1]])
             tempDeck2.pop();
-            winMessage = "There was a tie so 2 cards were wagered. You wins both cards. Press flip to continue";
+            winMessage = "There was a tie so 2 cards were wagered. You win both cards. Press flip to continue";
           } else if (this.state.deck1[this.state.deck1.length-2][1] < this.state.deck2[this.state.deck2.length-2][1]){
             tempDeck2.unshift([this.state.deck1[this.state.deck1.length-1][0], this.state.deck1[this.state.deck1.length-1][1]])
             tempDeck1.pop();
             tempDeck2.unshift([this.state.deck1[this.state.deck1.length-1][0], this.state.deck1[this.state.deck1.length-1][1]])
             tempDeck1.pop();
-            winMessage = "There was a tie so 2 cards were wagered. CPU wins both cards. Press flip to continue";
+            winMessage = "There was a tie so 2 cards were wagered. CPU win both cards. Press flip to continue";
           } else {
             if (this.state.deck1[this.state.deck1.length-3][1] > this.state.deck2[this.state.deck2.length-3][1]){
               tempDeck1.unshift([this.state.deck2[this.state.deck2.length-1][0], this.state.deck2[this.state.deck2.length-1][1]])
@@ -94,7 +102,7 @@ class WarDeck extends React.Component {
               tempDeck2.pop();
               tempDeck1.unshift([this.state.deck2[this.state.deck2.length-1][0], this.state.deck2[this.state.deck2.length-1][1]])
               tempDeck2.pop();
-              winMessage = "There were 2 ties so 3 cards were wagered. You wins each card. Press flip to continue";
+              winMessage = "There were 2 ties so 3 cards were wagered. You win each card. Press flip to continue";
             } else if (this.state.deck1[this.state.deck1.length-3][1] < this.state.deck2[this.state.deck2.length-3][1]){
               tempDeck2.unshift([this.state.deck1[this.state.deck1.length-1][0], this.state.deck1[this.state.deck1.length-1][1]])
               tempDeck1.pop();
@@ -102,7 +110,7 @@ class WarDeck extends React.Component {
               tempDeck1.pop();
               tempDeck2.unshift([this.state.deck1[this.state.deck1.length-1][0], this.state.deck1[this.state.deck1.length-1][1]])
               tempDeck1.pop();
-              winMessage = "There were 2 ties so 3 cards were wagered. CPU wins each card. Press flip to continue";
+              winMessage = "There were 2 ties so 3 cards were wagered. CPU win each card. Press flip to continue";
             } else {
               winMessage = "You triggered an extremely unlikely event that broke the game. Whoops"
             }
@@ -117,6 +125,9 @@ class WarDeck extends React.Component {
         deck2: tempDeck2,
         winMessage: winMessage
       });
+
+      this.reset();
+
     }
   }
 
@@ -164,12 +175,12 @@ class WarDeck extends React.Component {
         <p id='winner'>{this.state.winMessage}</p>
         <div id='player-warzone'>
           <div id='player-war-card'>
-            <GameCard className='war-card' ref='card3' key='3' suit={this.state.deck1[this.state.deck1.length-1][0]} value={this.state.deck1[this.state.deck1.length-1][1]} img={this.state.img} side='front'/>
+            <GameCard className='card' ref='playerWarzoneCard' key='3' suit={this.state.deck1[this.state.deck1.length-1][0]} value={this.state.deck1[this.state.deck1.length-1][1]} img={this.state.img}/>
           </div>
         </div>
         <div id='opponent-warzone'>
           <div id='opponent-war-card'>
-            <GameCard className='card' ref='card4' key='4' suit={this.state.deck2[this.state.deck2.length-1][0]} value={this.state.deck2[this.state.deck2.length-1][1]} img={this.state.img} side='front'/>
+            <GameCard className='card' ref='opponentWarzoneCard' key='4' suit={this.state.deck2[this.state.deck2.length-1][0]} value={this.state.deck2[this.state.deck2.length-1][1]} img={this.state.img}/>
           </div>
         </div>
       </div>

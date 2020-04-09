@@ -30,11 +30,11 @@ class GameCard extends React.Component{
     };
   }
 
-  handleShuffle() {
+  reset() {
     this.setState({
       suit: this.props.suit,
       value: this.props.value,
-      side: this.props.side,
+      side: 'front',
     })
   }
 
