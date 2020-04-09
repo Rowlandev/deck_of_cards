@@ -1,9 +1,6 @@
 import React from "react";
 import "../css/PlayingCard.css";
-<<<<<<< HEAD:src/components/DraggableCard.js
-=======
 import Draggable from 'react-draggable';
->>>>>>> 5a96e188053fe4e99debe927bf2fb42cffc7c1d0:src/components/PlayingCard.js
 
 // import red corner suit icons
 import RedDiamondCorner from "../images/red-corners/diamond.png";
@@ -30,16 +27,6 @@ class DraggableCard extends React.Component{
       suit: this.props.suit,
       value: this.props.value,
       img: this.props.img,
-<<<<<<< HEAD:src/components/DraggableCard.js
-      top: 50,
-      left: 50,
-      mouseDownX:0,
-      mouseDownY:0,
-      side: "back",
-    };
-  }
-
-=======
       top: this.props.top,
       left: this.props.left,
       shuffleX: this.props.shuffleX,
@@ -78,7 +65,6 @@ class DraggableCard extends React.Component{
     })
   }
 
->>>>>>> 5a96e188053fe4e99debe927bf2fb42cffc7c1d0:src/components/PlayingCard.js
   flipCard = () => {
     var newSide = null;
     if (this.state.side === "back"){
@@ -102,29 +88,6 @@ class DraggableCard extends React.Component{
     })
   }
 
-  dragStart = (e) => {
-    this.setState({
-      mouseDownX: e.clientX,
-      mouseDownY: e.clientY
-    })
-  }
-
-  drop = (e) => {
-    var newTop = this.state.top;
-    var newLeft = this.state.left;
-    var x = e.clientX;
-    var y = e.clientY;
-
-    newTop = this.state.top + (y - this.state.mouseDownY);
-    newLeft = this.state.left + (x - this.state.mouseDownX);
-
-    this.setState({
-      suit: this.props.suit,
-      value: this.props.value,
-      top: newTop,
-      left: newLeft
-    });
-  }
 
   render() {
 
@@ -217,9 +180,6 @@ class DraggableCard extends React.Component{
     }
 
     return (
-<<<<<<< HEAD:src/components/DraggableCard.js
-      <div id="card" draggable data-testid="card" onClick={(e) => this.flipCard()} onDragStart={(e) => this.dragStart(e)} onDragEnd={(e) => this.drop(e)}>
-=======
       //<div id="card" style={{zIndex:"auto"}} onMouseUp={(e) => this.onMouseUp(e)} onMouseDown={(e) => this.onMouseDown(e)} onMouseMove={(e) => this.onMouseMove(e)}>
       <Draggable
         position={{x: this.state.left, y: this.state.top - 500}}
@@ -228,12 +188,12 @@ class DraggableCard extends React.Component{
         onStop={this.handleStop, this.onStop}>
 
       <div id="card" onClick={(e) => this.onClick(e)}>
->>>>>>> 5a96e188053fe4e99debe927bf2fb42cffc7c1d0:src/components/PlayingCard.js
       {this.state.side === "back" &&
         <div id="back-of-card">
           <img src={this.props.img} alt="prof cardback" id="back-image" draggable={false}/>
         </div>
       }
+
       {this.state.side === "front" &&
         <div id="playing-card">
           {topLeftSuit}

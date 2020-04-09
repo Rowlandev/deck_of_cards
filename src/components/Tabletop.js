@@ -27,6 +27,7 @@ class Tabletop extends React.Component {
       showingHelpMessage: false,
       dark: false,
       img: Prof1,
+      layout: 'no layout chosen'
     };
   }
 
@@ -64,10 +65,10 @@ class Tabletop extends React.Component {
     })
   }
 
-  /* Update Card Layouts */
   enterSandboxMode = () => {
     this.setState({
-      mode: 'sandbox'
+      mode: 'sandbox',
+      layout: 'free-mode'
     });
   }
 
@@ -104,7 +105,7 @@ class Tabletop extends React.Component {
       {this.state.mode === "sandbox" &&
           <div id="table">
             <GameButtons type="help" showing={this.state.showingHelpMessage} shuffle={this.shuffle} goToMainMenu={this.goToMainMenu}/>
-            <SandboxDeck ref="sandboxDeck" img={this.state.img}/>
+            <SandboxDeck ref="sandboxDeck" img={this.state.img} layout={this.state.layout}/>
           </div>
       }
 

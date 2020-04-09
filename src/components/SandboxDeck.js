@@ -3,6 +3,7 @@ import React from "react";
 
 // CUSTOM IMPORTS
 import DraggableCard from "./DraggableCard.js";
+import {freeModeTemplates} from '../Templates.js';
 
 class SandboxDeck extends React.Component {
 
@@ -19,42 +20,86 @@ class SandboxDeck extends React.Component {
     }
   }
 
+  /* Shuffle cards and revert to original positions */
   shuffle = () => {
+    // get & initialize needed objects
     var currentSuitVals = [...this.state.suitVals];
     var newOrder = [];
-    var i = 0;
 
+    // Create new order of cards
     while(currentSuitVals.length !== 0){
       var rand = Math.floor(Math.random() * (currentSuitVals.length));
       newOrder.push(currentSuitVals[rand]);
       currentSuitVals.splice(rand, 1);
-      i++;
     }
 
+    // Set state using new order
     this.setState({
       suitVals: newOrder
     });
 
+    // Set timeout while shuffle occurs
     setTimeout(() =>{
       for(var i=0;i<this.state.suitVals.length;i++){
         this.refs['card'+i].handleShuffle();
-        //console.log('Shuffle trigger');
       }
     });
   }
 
-  createDeck(){
-  let deck = []
-    for (let i=0; i < this.state.suitVals.length; i++) {
-      deck.push(<DraggableCard ref={'card'+i} key={i} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img}/>)
+  /* Get initial positions for card that templates are based off */
+  getInitialCardPositions(layout) {
 
+    // Get window width and height in pixels
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    // return initial position object
+    switch(layout) {
+
+
+      case 'solitaire':
+        return { x: screenWidth / 10, y: screenHeight / 4 };
+      case 'pyramid':
+        return { x: screenWidth / 2 - 55, y: screenHeight / 8 };
+      case 'free-mode':
+        return { x: screenWidth / 2 - 55, y: screenHeight / 4 };
+      default:
+        return { x: screenWidth / 2 - 55, y: screenHeight / 4 };
+    }
+  }
+
+  /*Return position & side template based on layout chosen*/
+  getTemplate(x, y) {
+    return freeModeTemplates(x, y);
+  }
+
+  /* Return deck as array of <PlayingCard/> components */
+  createDeck(){
+    // Initialize empty deck array
+    let deck = [];
+
+    // Get card positions corresponding to chosen layout
+    const layout = this.props.layout;
+    var positions = this.getInitialCardPositions(layout);
+    const x = positions.x;
+    const y = positions.y;
+
+    // Get side & position template based on layout chosen
+    const template = this.getTemplate(x, y);
+
+    for (let i=0; i < this.state.suitVals.length; i++) {
+      const side = i < template.sides.length ? template.sides[i] : 'back';
+      const position = i < template.positions.length ? template.positions[i] : template.defaultLocation;
+
+
+      deck.push(<DraggableCard ref={'card'+i} key={i} side={side} suit={this.state.suitVals[i][0]} value={this.state.suitVals[i][1]} img={this.state.img} top={position.y} left={position.x} shuffleX={x} shuffleY={y}/>)
     }
     return deck;
   }
 
   render() {
     return (
-      <div id='sandboxDeck'>
+      <div id='deck'>
         {this.createDeck()}
       </div>
     );
