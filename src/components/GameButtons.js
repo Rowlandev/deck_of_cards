@@ -44,26 +44,28 @@ class GameButtons extends React.Component {
         {/* Darkened Background*/}
         <div className={this.state.modalClassName}></div>
 
-        <img src={ShuffleIcon} style={{zIndex:100}} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
-        <img src={HelpIcon} style={{zIndex:100}} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
-        <img src={ExitIcon} style={{zIndex:100}} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+        <img src={ShuffleIcon} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
+        <img src={HelpIcon} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+        <img src={ExitIcon} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
 
         {/* Header & Body*/}
         {this.state.showing &&
           <div id="header-and-body">
 
             <div id="header">
-              <p id='header-text'>{this.props.helpText.header}</p>
+              <p id='header-text'>Welcome to our deck of cards simulation!</p>
             </div>
 
             <div id="body">
-              <p id='body-text'>{this.props.helpText.body}</p>
+              <p id='body-text'>
+                Using our deck of cards simulation is very
+                simple - all you have to do is drag and drop cards
+                and pretend as if they were real :)
+              </p>
             </div>
 
-            <div id="close-button-container">
-              <div id="close-button" onClick={this.toggleHelp}>
-                <p id="close-button-text">Close</p>
-              </div>
+            <div id="close-button" onClick={this.toggleHelp}>
+              Close
             </div>
 
           </div>

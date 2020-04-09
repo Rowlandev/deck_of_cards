@@ -1,0 +1,171 @@
+#game-container {
+  text-align: center;
+  position: relative;
+  height: 70%;
+  width: 100%;
+}
+
+#player-side {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
+
+#player-deck-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 150px;
+  height: 200px;
+  background: DarkBlue;
+  border-radius: 7%;
+  border: solid white 1px;
+}
+
+#player-deck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 107.25px;
+  height: 150px;
+}
+
+#warzone {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  background: black;
+  border-radius: 5%;
+}
+
+#player-warzone {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
+
+#player-war-card {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 107.25px;
+  height: 150px;
+}
+
+#opponent-warzone {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  float: right;
+}
+
+#opponent-war-card {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 107.25px;
+  height: 150px;
+}
+
+#opponent-side {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  float: right;
+}
+
+#opponent-deck-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 150px;
+  height: 200px;
+  background: DarkRed;
+  border-radius: 7%;
+  border: solid white 1px;
+}
+
+#opponent-deck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 107.25px;
+  height: 150px;
+}
+
+.war-button {
+  background-color: white;
+  width: 100px;
+  border: solid black 1px;
+  color: black;
+  padding: 20px;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+.war-button:hover {
+  background-color: LightGray;
+}
+
+.card-counter {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid black 1px;
+}
+
+#player-card-counter {
+  background: LightBlue;
+}
+
+#opponent-card-counter {
+  background: Salmon;
+}
+
+#war-title {
+  margin: 0;
+  text-align: center;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 50px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#winner {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 20px;
+  color: LightGray;
+}
