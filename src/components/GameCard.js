@@ -129,14 +129,14 @@ class GameCard extends React.Component{
     }
 
     return (
-      <div>
+      <div  >
       {this.state.side === "back" &&
         <div className='game-card' id="back-of-card">
-          <img src={this.props.img} id="back-image"/>
+          <img src={this.props.img} draggable={false} id="back-image"/>
         </div>
       }
       {this.state.side === "front" &&
-        <div className='game-card' id="playing-card">
+        <div className='game-card' draggable={false} id="playing-card">
           {topLeftSuit}
           {bottomRightSuit}
           {topLeftValue}

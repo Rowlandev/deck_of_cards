@@ -51,10 +51,10 @@ class GameButtons extends React.Component {
           {/* Darkened Background*/}
           <div className={this.state.modalClassName}></div>
 
-          <img src={ShuffleIcon} style={{zIndex:2999}} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
-          <img src={LayoutIcon} style={{zIndex:2999}} className="icon" alt="layout icon" id="layout-icon" onClick={this.goToLayoutMenu}/>
-          <img src={HelpIcon} style={{zIndex:2999}} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
-          <img src={ExitIcon} style={{zIndex:2999}} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+          <img src={ShuffleIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="shuffle icon" id="shuffle-icon" onClick={this.handleShuffle}/>
+          <img src={LayoutIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="layout icon" id="layout-icon" onClick={this.goToLayoutMenu}/>
+          <img src={HelpIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+          <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
 
           {/* Header & Body*/}
           {this.state.showing &&
@@ -85,13 +85,13 @@ class GameButtons extends React.Component {
     }
     else {
       return (
-        <div className="button-modal-container">
+        <div className="button-modal-container" draggable={false}>
 
           {/* Darkened Background*/}
           <div className={this.state.modalClassName}></div>
 
-          <img src={HelpIcon} style={{zIndex:2999}} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
-          <img src={ExitIcon} style={{zIndex:2999}} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
+          <img src={HelpIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="help icon" id="help-icon" onClick={this.toggleHelp}/>
+          <img src={ExitIcon} style={{zIndex:2999}} draggable={false} className="icon" alt="exit icon" id="exit-icon" onClick={this.handleExit}/>
 
           {/* Header & Body*/}
           {this.state.showing &&
