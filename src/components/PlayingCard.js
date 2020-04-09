@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/PlayingCard.css";
+import Draggable from 'react-draggable';
 
 // import red corner suit icons
 import RedDiamondCorner from "../images/red-corners/diamond.png";
@@ -28,56 +29,40 @@ class PlayingCard extends React.Component{
       img: this.props.img,
       top: this.props.top,
       left: this.props.left,
-      initialX:0,
-      initialY:0,
-      mouseDownX:0,
-      mouseDownY:0,
+      shuffleX: this.props.shuffleX,
+      shuffleY: this.props.shuffleY,
       side: this.props.side,
-      dragging: false,
-      flipable:true
+      deltaX: null,
+      deltaY: null,
+      flipable: true
     };
   }
 
-  onMouseDown = (e) => {
-    // only left mouse button
-    if (e.button !== 0) return
-
-    this.setState({
-      dragging: true,
-      initialX: this.state.left,
-      initialY: this.state.top,
-      mouseDownX: e.clientX,
-      mouseDownY: e.clientY,
-    })
-
-     e.stopPropagation()
-     e.preventDefault()
+  onClick = (e) => {
+    if(this.state.flipable)
+      {this.flipCard(e)}
+    else
+      {this.setState({flipable: true})}
   }
 
-  onMouseUp = (e) => {
-    if(this.state.flipable){this.flipCard(e)}
-
+  onStart = (e) => {
     this.setState({
-      dragging: false,
-      flipable: true
+      deltaX: e.clientX - this.state.left,
+      deltaY: e.clientY - this.state.top
     })
-
-     e.stopPropagation()
-     e.preventDefault()
-
   }
 
-  onMouseMove = (e) => {
-    if (!this.state.dragging) return
+  onStop = (e) => {
+    this.setState({
+      top: e.clientY - this.state.deltaY,
+      left: e.clientX - this.state.deltaX,
+    })
+  }
 
-      this.setState({
-        flipable:false,
-        top: e.clientY - (this.state.mouseDownY-this.state.initialY),
-        left: e.clientX - (this.state.mouseDownX-this.state.initialX)
-      });
-
-     e.stopPropagation()
-     e.preventDefault()
+  onDrag = (e) => {
+    this.setState({
+      flipable:false
+    })
   }
 
   flipCard = () => {
@@ -97,8 +82,8 @@ class PlayingCard extends React.Component{
     this.setState({
       suit: this.props.suit,
       value: this.props.value,
-      top: 50,
-      left: 50,
+      top: this.props.shuffleY,
+      left: this.props.shuffleX,
       side: "back",
     })
   }
@@ -112,9 +97,6 @@ class PlayingCard extends React.Component{
     var bottomRightSuit;
     var bottomRightValue;
     var largeSuit;
-    var offset = {top: this.state.top + "px",
-                  left: this.state.left + "px"
-                }
 
     // assign card red suit
     if (this.state.suit === "heart") {
@@ -198,15 +180,22 @@ class PlayingCard extends React.Component{
     }
 
     return (
-      <div id="card" style={{zIndex:"auto"}} onMouseUp={(e) => this.onMouseUp(e)} onMouseDown={(e) => this.onMouseDown(e)} onMouseMove={(e) => this.onMouseMove(e)}>
+      //<div id="card" style={{zIndex:"auto"}} onMouseUp={(e) => this.onMouseUp(e)} onMouseDown={(e) => this.onMouseDown(e)} onMouseMove={(e) => this.onMouseMove(e)}>
+      <Draggable
+        position={{x: this.state.left, y: this.state.top - 500}}
+        onStart={this.handleStart, this.onStart}
+        onDrag={this.handleDrag, this.onDrag}
+        onStop={this.handleStop, this.onStop}>
+
+      <div id="card" onClick={(e) => this.onClick(e)}>
       {this.state.side === "back" &&
-        <div id="back-of-card" style={offset}>
+        <div id="back-of-card">
           <img src={this.props.img} alt="prof cardback" id="back-image" draggable={false}/>
         </div>
       }
 
       {this.state.side === "front" &&
-        <div id="playing-card" style={offset}>
+        <div id="playing-card">
           {topLeftSuit}
           {bottomRightSuit}
           {topLeftValue}
@@ -215,6 +204,8 @@ class PlayingCard extends React.Component{
         </div>
       }
       </div>
+      </Draggable>
+
     );
   }
 }

@@ -1,5 +1,6 @@
 // SYSTEM IMPORTS
 import React from "react";
+import {RemoveScrollBar} from 'react-remove-scroll-bar';
 
 // IMAGE IMPORTS
 import Prof1 from "../images/backs/prof1.JPG"
@@ -163,6 +164,7 @@ class Tabletop extends React.Component {
 
     return (
       <div id='display'>
+      <RemoveScrollBar />
 
       {/* Main Menu */}
       {this.state.mode === "mainMenu" &&
