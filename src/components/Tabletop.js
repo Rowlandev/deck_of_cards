@@ -214,7 +214,7 @@ loadSolitaire = () => {
           <p><button className="button" onClick={this.loadTheIdiot} text={help.theIdiot}>The Idiot</button></p>
           <p><button className="button" onClick={this.loadAccordian} text={help.accordian}>Accordian</button></p>
           <p><button className="button" onClick={this.loadPyramid} text={help.pyramid}>Pyramid</button></p>
-          <p><button className="button" onClick={this.loadFreeMode} text={help.freeMode}>Free Mode</button></p>
+          <p><button className="button" onClick={this.loadFreeMode} text={help.freeMode}>Sandbox Mode</button></p>
         </div>
       </div>
       }
