@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DECK OF CARD TESTS TEST #1 - APPLICATION RENDERS 1`] = `
+<div
+  className="App"
+>
+  <div
+    id="display"
+  >
+    <div
+      className="main-menu"
+    >
+      <p
+        id="title"
+      >
+        deck_of_cards
+      </p>
+      <p
+        id="creators"
+      >
+        By: Braden Batman, Chase Grainger, and Matthew Heck
+      </p>
+      <p>
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          Play
+        </button>
+      </p>
+      <p>
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          Customize
+        </button>
+      </p>
+      <p>
+        <button
+          className="button"
+          onClick={[Function]}
+        >
+          About
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+`;
