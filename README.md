@@ -1,4 +1,4 @@
-This project featuers a simulation of a playing deck of cards. The user will be able to move the cards freely as if they were actual playing cards. The user will also be able to reset the deck to pre-defined layouts in order to play some of the most popular card games.
+This project features a simulation of a playing deck of cards. The user will be able to move the cards freely as if they were actual playing cards. The user will also be able to reset the deck to pre-defined layouts in order to play some of the most popular card games.
 
 Access to the current progression of the application can be seen in the website link.
 
