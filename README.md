@@ -2,6 +2,8 @@
 
 This is a simulation of a deck of cards; t is designed to re-create the action of actual playing cards. The user is able to use the deck of cards freely within Sandbox mode, while also being able to reset the deck to pre-defined layouts in order to play some well-known card games.
 
+The directions for getting your version of deck of cards on a local machine can be seen below, after the listing of authors. To view on the web, navigate to [this link.](https://rowlandev.github.io/deck_of_cards/)
+
 ## Demo
 ![Deck of Cards Demo](demo.gif)
 
@@ -15,12 +17,6 @@ This is a simulation of a deck of cards; t is designed to re-create the action o
 * **Braden Batman** - [bradenbatman](https://github.com/bradenbatman)
 * **Chase Grainger** - [Rowlandev](https://github.com/Rowlandev)
 * **Matthew Heck** - [matthewheck17](https://github.com/matthewheck17)
-
-## Acknowledgements
-
-## Getting Started
-
-The directions for getting your version of deck of cards on a local machine can be seen below. To view on the web, navigate to [this link.](https://rowlandev.github.io/deck_of_cards/)
 
 ## Create React App 
 
