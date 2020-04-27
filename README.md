@@ -8,7 +8,7 @@ This is a simulation of a deck of cards; t is designed to re-create the action o
 ## Built With
 
 * [ReactJS](https://reactjs.org/)
-* [reate React App](https://github.com/facebook/create-react-app)
+* [Create React App](https://github.com/facebook/create-react-app)
 
 ## Authors
 
