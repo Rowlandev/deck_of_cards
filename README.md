@@ -1,6 +1,28 @@
-This project features a simulation of a playing deck of cards. The user will be able to move the cards freely as if they were actual playing cards. The user will also be able to reset the deck to pre-defined layouts in order to play some of the most popular card games.
+# Deck of Cards
 
-Access to the current progression of the application can be seen in the website link.
+This is a simulation of a deck of cards; t is designed to re-create the action of actual playing cards. The user is able to use the deck of cards freely within Sandbox mode, while also being able to reset the deck to pre-defined layouts in order to play some well-known card games.
+
+## Demo
+![Deck of Cards Demo](demo.gif)
+
+## Built With
+
+* [ReactJS](https://reactjs.org/)
+* [reate React App](https://github.com/facebook/create-react-app)
+
+## Authors
+
+* **Braden Batman** - [bradenbatman](https://github.com/bradenbatman)
+* **Chase Grainger** - [Rowlandev](https://github.com/Rowlandev)
+* **Matthew Heck** - [matthewheck17](https://github.com/matthewheck17)
+
+## Acknowledgements
+
+## Getting Started
+
+The directions for getting your version of deck of cards on a local machine can be seen below. To view on the web, navigate to [this link.](https://rowlandev.github.io/deck_of_cards/)
+
+## Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
