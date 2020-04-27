@@ -6,10 +6,10 @@ The directions for getting your version of deck of cards on a local machine can 
 
 ## Demo
 
-Sandbox Mode
+#### Sandbox Mode
 ![Sandbox Demo](sandbox-demo.gif)
 
-War Mode
+#### War Mode
 ![War Demo](war-demo.gif)
 
 ## Built With
