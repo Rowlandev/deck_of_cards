@@ -5,7 +5,12 @@ This is a simulation of a deck of cards; t is designed to re-create the action o
 The directions for getting your version of deck of cards on a local machine can be seen below, after the listing of authors. To view on the web, navigate to [this link.](https://rowlandev.github.io/deck_of_cards/)
 
 ## Demo
-![Deck of Cards Demo](demo.gif)
+
+Sandbox Mode
+![Sandbox Demo](sandbox-demo.gif)
+
+War Mode
+![War Demo](war-demo.gif)
 
 ## Built With
 
